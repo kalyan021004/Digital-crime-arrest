@@ -1,0 +1,91 @@
+[
+  {
+    "id": "SP001",
+    "category": "authority_impersonation",
+    "pattern_name": "Customs/Parcel Opener",
+    "text": "Caller claims to be from Customs, Courier company, or FedEx, saying a parcel registered under the victim's name/Aadhaar contains illegal drugs, fake passports, or contraband. Used as the opening hook to create fear before transferring the call to a fake 'police officer'.",
+    "example_phrases": [
+      "a parcel under your name containing illegal substances has been intercepted",
+      "your Aadhaar number is linked to a package containing drugs",
+      "this courier has your ID proof and banned items inside"
+    ]
+  },
+  {
+    "id": "SP002",
+    "category": "authority_impersonation",
+    "pattern_name": "CBI/ED/Police Impersonation",
+    "text": "Caller or video-caller claims to be a CBI, Enforcement Directorate, Customs, or local police officer, often wearing a uniform or sitting in front of a fake official backdrop, and shows a fabricated ID card or warrant on screen to appear legitimate.",
+    "example_phrases": [
+      "this is officer speaking from CBI headquarters",
+      "I am showing you my official ID, this is a government investigation",
+      "we have issued a digital warrant against your name"
+    ]
+  },
+  {
+    "id": "SP003",
+    "category": "isolation_and_threat",
+    "pattern_name": "No-Disconnect / Digital Arrest Threat",
+    "text": "Victim is told they cannot disconnect the call, leave the house, or inform any family member or lawyer, and that doing so will result in immediate physical arrest. This is the defining psychological tactic of the 'digital arrest' scam and rarely appears in legitimate law enforcement procedure.",
+    "example_phrases": [
+      "do not disconnect the call or you will be arrested immediately",
+      "this is a confidential investigation, you cannot tell anyone",
+      "stay on video until the investigation is complete",
+      "if you leave this call your case will be escalated to non-bailable offence"
+    ]
+  },
+  {
+    "id": "SP004",
+    "category": "financial_pressure",
+    "pattern_name": "Verification Transfer Request",
+    "text": "Victim is instructed to transfer money to a bank account described as an 'RBI verification account', 'income tax clearance account', or similar, with a promise that funds will be refunded once innocence is proven. This is the monetization step of the scam.",
+    "example_phrases": [
+      "transfer the amount to this RBI verification account, it will be refunded within 24 hours",
+      "to prove your innocence you must pay a security deposit",
+      "this amount will be returned once the investigation clears your name"
+    ]
+  },
+  {
+    "id": "SP005",
+    "category": "financial_pressure",
+    "pattern_name": "Urgency and Deadline Pressure",
+    "text": "Scammer imposes an artificial short deadline (minutes to a few hours) for payment or 'verification', preventing the victim from pausing to think, consult family, or verify independently.",
+    "example_phrases": [
+      "you have only 30 minutes to comply or a lookout notice will be issued",
+      "the payment must be completed before the officer returns from lunch",
+      "this window closes in 15 minutes"
+    ]
+  },
+  {
+    "id": "SP006",
+    "category": "technical_signal",
+    "pattern_name": "Spoofed Caller ID",
+    "text": "Calls appear to originate from a number formatted to resemble an official government or police helpline, or from an international number disguised with a local prefix. Legitimate government agencies do not initiate arrest procedures via phone call.",
+    "example_phrases": [
+      "caller ID displayed as police helpline",
+      "number prefix resembles Delhi Police control room",
+      "call originated from spoofed local landline pattern"
+    ]
+  },
+  {
+    "id": "SP007",
+    "category": "authority_impersonation",
+    "pattern_name": "Fake Document / Warrant Display",
+    "text": "Scammer shares a screen or sends an image of a fabricated arrest warrant, FIR copy, or Supreme Court notice, often with real logos copied from government websites, to add visual legitimacy.",
+    "example_phrases": [
+      "I am sending you the digital arrest warrant right now",
+      "please see the Supreme Court order attached",
+      "this is your FIR copy number"
+    ]
+  },
+  {
+    "id": "SP008",
+    "category": "financial_pressure",
+    "pattern_name": "Full Asset Disclosure Request",
+    "text": "Victim is asked to disclose full bank balances, fixed deposits, and investment details 'for verification', which the scammer then uses to determine how much can be extracted.",
+    "example_phrases": [
+      "tell me your complete bank balance across all accounts",
+      "how much money do you have in fixed deposits",
+      "we need to verify all your account details to clear your name"
+    ]
+  }
+]

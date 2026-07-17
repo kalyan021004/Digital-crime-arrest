@@ -1,0 +1,67 @@
+[
+  {
+    "session_id": "CALL_001",
+    "label": "scam",
+    "city": "Mumbai",
+    "latitude": 19.0760,
+    "longitude": 72.8777,
+    "chunks": [
+      "Hello, I am calling from Mumbai Customs office. A parcel under your name containing illegal substances has been intercepted.",
+      "This is a confidential matter. Do not disconnect the call or inform anyone, or you will be arrested immediately.",
+      "I am connecting you to a senior CBI officer for further investigation. Please stay on video.",
+      "To prove your innocence, you need to transfer Rs 50,000 to this RBI verification account for 24 hours, it will be refunded."
+    ]
+  },
+  {
+    "session_id": "CALL_002",
+    "label": "scam",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.2090,
+    "chunks": [
+      "This is Enforcement Directorate calling regarding a money laundering case linked to your PAN card.",
+      "You have only 30 minutes to comply or a non-bailable warrant will be issued against you.",
+      "Tell me your complete bank balance across all accounts so we can verify your innocence.",
+      "Send the security deposit now to this account, it is fully refundable after verification."
+    ]
+  },
+  {
+    "session_id": "CALL_003",
+    "label": "legit",
+    "city": "Hyderabad",
+    "latitude": 17.3850,
+    "longitude": 78.4867,
+    "chunks": [
+      "Hi, this is Priya calling from HDFC Bank customer service regarding your recent credit card application.",
+      "I wanted to confirm your current address for the card delivery.",
+      "Your card should arrive within 5-7 business days.",
+      "Thank you for banking with us."
+    ]
+  },
+  {
+    "session_id": "CALL_004",
+    "label": "legit",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "Hello, this is regarding your recent Amazon order.",
+      "Delivery has been delayed by one day.",
+      "Track your package in the app.",
+      "Thank you."
+    ]
+  },
+  {
+    "session_id": "CALL_005",
+    "label": "scam",
+    "city": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "chunks": [
+      "Sir this is officer speaking from CBI headquarters.",
+      "Your Aadhaar is linked to a parcel containing drugs.",
+      "This investigation is confidential.",
+      "Transfer the money immediately."
+    ]
+  }
+]
