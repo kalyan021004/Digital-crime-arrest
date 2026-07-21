@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Arrest Shield — Live Intelligence Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0E1A;
+    --panel: #121826;
+    --panel-2: #161E2E;
+    --border: #232C40;
+    --text: #E8ECF4;
+    --text-muted: #7C8AA8;
+    --safe: #2FD9A8;
+    --warn: #F0A93B;
+    --danger: #FF4757;
+    --scan: #4EA1FF;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(78,161,255,0.07), transparent 40%),
+      radial-gradient(circle at 85% 100%, rgba(47,217,168,0.05), transparent 40%);
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(18,24,38,0.6);
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .brand { display: flex; align-items: center; gap: 12px; }
+
+  .brand-mark {
+    width: 34px; height: 34px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--scan), var(--safe));
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; font-size: 15px;
+    color: #06101F;
+    flex-shrink: 0;
+  }
+
+  .brand-text h1 {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+
+  .brand-text .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .header-right { display: flex; align-items: center; gap: 18px; }
+
+  .clock {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .status-pill {
+    display: flex; align-items: center; gap: 7px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+  }
+
+  .status-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--text-muted);
+  }
+  .status-dot.online { background: var(--safe); box-shadow: 0 0 8px var(--safe); }
+  .status-dot.offline { background: var(--danger); box-shadow: 0 0 8px var(--danger); }
+
+  select#lang-select {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+
+  /* ---------- Layout ---------- */
+  main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    padding: 24px 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 980px) {
+    main { grid-template-columns: 1fr; }
+  }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+  }
+
+  .panel-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* ---------- Simulator controls ---------- */
+  .sim-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+
+  button {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 13px;
+    padding: 9px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--panel-2);
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color 0.15s ease, transform 0.1s ease;
+  }
+  button:hover { border-color: var(--scan); }
+  button:active { transform: scale(0.98); }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  button.primary {
+    background: linear-gradient(135deg, var(--scan), #3b7fd9);
+    border: none;
+    color: #06101F;
+    font-weight: 600;
+  }
+
+  /* ---------- Threat dial ---------- */
+  .dial-row {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 10px 0 24px 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .dial-wrap { position: relative; width: 150px; height: 150px; flex-shrink: 0; }
+
+  .dial-wrap svg { transform: rotate(-90deg); }
+
+  .dial-track { fill: none; stroke: var(--border); stroke-width: 10; }
+  .dial-fill {
+    fill: none;
+    stroke: var(--text-muted);
+    stroke-width: 10;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.6s cubic-bezier(0.4,0,0.2,1), stroke 0.4s ease;
+  }
+
+  .dial-center {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .dial-score {
+    font-family: var(--font-mono); font-size: 30px; font-weight: 600;
+  }
+  .dial-label { font-size: 10px; color: var(--text-muted); letter-spacing: 1px; }
+
+  .decision-info { flex: 1; min-width: 200px; }
+
+  .decision-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background: var(--panel-2);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .decision-badge.warn { background: rgba(240,169,59,0.15); color: var(--warn); border-color: var(--warn); }
+  .decision-badge.alert {
+    background: rgba(255,71,87,0.15); color: var(--danger); border-color: var(--danger);
+    animation: pulse-badge 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse-badge {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,71,87,0.35); }
+    50% { box-shadow: 0 0 0 6px rgba(255,71,87,0); }
+  }
+
+  .categories-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .category-chip {
+    font-size: 11px;
+    font-family: var(--font-mono);
+    padding: 4px 9px;
+    border-radius: 5px;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+
+  /* ---------- Transcript ticker ---------- */
+  .ticker {
+    max-height: 260px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ticker-line {
+    display: flex;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: var(--panel-2);
+    border-left: 2px solid var(--border);
+    font-size: 13px;
+    line-height: 1.45;
+    opacity: 0;
+    animation: line-in 0.35s ease forwards;
+  }
+  .ticker-line.flagged { border-left-color: var(--danger); }
+  @keyframes line-in { to { opacity: 1; } }
+
+  .ticker-time {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  .empty-state {
+    color: var(--text-muted);
+    font-size: 13px;
+    padding: 24px 0;
+    text-align: center;
+  }
+
+  /* ---------- Alert box ---------- */
+  .alert-box {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: rgba(255,71,87,0.08);
+    border: 1px solid rgba(255,71,87,0.35);
+    font-size: 13px;
+    line-height: 1.5;
+    display: none;
+  }
+  .alert-box.show { display: block; }
+  .alert-box .alert-heading {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--danger);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  /* ---------- Intelligence sidebar ---------- */
+  .intel-section { margin-bottom: 22px; }
+  .intel-section:last-child { margin-bottom: 0; }
+  .intel-subhead {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .intel-card {
+    padding: 12px 14px;
+    border-radius: 9px;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    margin-bottom: 8px;
+    font-size: 12.5px;
+  }
+  .intel-card-title { font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .intel-card-meta { color: var(--text-muted); font-family: var(--font-mono); font-size: 11px; }
+
+  .refresh-btn {
+    font-size: 11px;
+    padding: 5px 10px;
+    color: var(--scan);
+    background: transparent;
+    border: 1px solid var(--border);
+  }
+
+  /* ---------- Message checker (bottom bar) ---------- */
+  .checker-bar {
+    max-width: 1400px;
+    margin: 0 auto 28px auto;
+    padding: 0 28px;
+  }
+
+  .checker-inner {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .checker-inner input[type=text] {
+    flex: 1;
+    min-width: 260px;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 11px 14px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 13px;
+  }
+  .checker-inner input[type=text]:focus { outline: none; border-color: var(--scan); }
+
+  .checker-result {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    display: none;
+  }
+  .checker-result.show { display: block; }
+  .checker-result .conf { font-family: var(--font-mono); color: var(--text); }
+
+  /* ---------- Config note ---------- */
+  .config-note {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 28px 8px 28px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark">DA</div>
+    <div class="brand-text">
+      <div class="eyebrow">Live Intelligence Console</div>
+      <h1>Digital Arrest Shield</h1>
+    </div>
+  </div>
+  <div class="header-right">
+    <select id="lang-select">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ta">தமிழ்</option>
+      <option value="kn">ಕನ್ನಡ</option>
+    </select>
+    <span class="clock" id="clock">--:--:--</span>
+    <div class="status-pill">
+      <span class="status-dot" id="status-dot"></span>
+      <span id="status-text">CONNECTING</span>
+    </div>
+  </div>
+</header>
+
+<div class="config-note" id="config-note">API base: <span id="api-base-label"></span> — edit API_BASE at the top of the script tag if your server runs elsewhere.</div>
+
+<main>
+  <!-- LEFT: Live Call Simulator -->
+  <section class="panel">
+    <div class="panel-title">Live Call Simulator</div>
+
+    <div class="sim-controls">
+      <button class="primary" id="run-scam">▶ Run Digital-Arrest Call</button>
+      <button id="run-legit">▶ Run Legit Call</button>
+      <button id="reset-sim">Reset</button>
+    </div>
+
+    <div class="dial-row">
+      <div class="dial-wrap">
+        <svg width="150" height="150" viewBox="0 0 150 150">
+          <circle class="dial-track" cx="75" cy="75" r="62"></circle>
+          <circle class="dial-fill" id="dial-fill" cx="75" cy="75" r="62"
+                   stroke-dasharray="389.6" stroke-dashoffset="389.6"></circle>
+        </svg>
+        <div class="dial-center">
+          <div class="dial-score" id="dial-score">0%</div>
+          <div class="dial-label">THREAT LEVEL</div>
+        </div>
+      </div>
+      <div class="decision-info">
+        <div class="decision-badge" id="decision-badge">STANDBY</div>
+        <div class="categories-list" id="categories-list"></div>
+      </div>
+    </div>
+
+    <div class="intel-subhead">Transcript feed</div>
+    <div class="ticker" id="ticker">
+      <div class="empty-state">No active session. Run a call above to begin monitoring.</div>
+    </div>
+
+    <div class="alert-box" id="alert-box">
+      <div class="alert-heading">⚠ Citizen Alert Generated</div>
+      <div id="alert-text"></div>
+    </div>
+  </section>
+
+  <!-- RIGHT: Intelligence sidebar -->
+  <aside class="panel">
+    <div class="panel-title">
+      Field Intelligence
+      <button class="refresh-btn" id="refresh-intel">↻ Refresh</button>
+    </div>
+
+    <div class="intel-section">
+      <div class="intel-subhead">Suspected Campaigns</div>
+      <div id="campaigns-list"><div class="empty-state">No campaigns detected yet.</div></div>
+    </div>
+
+    <div class="intel-section">
+      <div class="intel-subhead">Fraud Hotspots</div>
+      <div id="hotspots-list"><div class="empty-state">No hotspots logged yet.</div></div>
+    </div>
+  </aside>
+</main>
+
+<div class="checker-bar">
+  <section class="panel">
+    <div class="panel-title">Quick Message Checker</div>
+    <div class="checker-inner">
+      <input type="text" id="checker-input" placeholder="Paste a suspicious message or call excerpt to check instantly...">
+      <button class="primary" id="checker-btn">Check Message</button>
+    </div>
+    <div class="checker-result" id="checker-result"></div>
+  </section>
+</div>
+
+<script>
+// ============================================================
+// CONFIG — change this if your server runs somewhere other
+// than localhost:8000 (e.g. after deploying to Render/Railway)
+// ============================================================
+const API_BASE = "http://localhost:8000";
+document.getElementById("api-base-label").textContent = API_BASE;
+
+// ---------- Sample call transcripts for the simulator ----------
+const SCAM_CALL = [
+  "Hello, I am calling from Mumbai Customs office. A parcel under your name containing illegal substances has been intercepted.",
+  "This is a confidential matter. Do not disconnect the call or inform anyone, or you will be arrested immediately.",
+  "I am connecting you to a senior CBI officer for further investigation. Please stay on video.",
+  "To prove your innocence, you need to transfer Rs 50,000 to this RBI verification account for 24 hours, it will be refunded.",
+];
+
+const LEGIT_CALL = [
+  "Hi, this is Priya calling from HDFC Bank customer service regarding your recent credit card application.",
+  "I wanted to confirm your current address for the card delivery.",
+  "Your card should arrive within 5-7 business days. Is there anything else I can help you with?",
+  "Thank you for banking with us, have a great day.",
+];
+
+// ---------- Clock ----------
+function tickClock() {
+  document.getElementById("clock").textContent = new Date().toLocaleTimeString("en-IN", { hour12: false });
+}
+tickClock();
+setInterval(tickClock, 1000);
+
+// ---------- Health check ----------
+async function checkHealth() {
+  const dot = document.getElementById("status-dot");
+  const label = document.getElementById("status-text");
+  try {
+    const res = await fetch(`${API_BASE}/health`);
+    if (!res.ok) throw new Error();
+    dot.className = "status-dot online";
+    label.textContent = "SYSTEM ONLINE";
+  } catch (e) {
+    dot.className = "status-dot offline";
+    label.textContent = "SERVER UNREACHABLE";
+  }
+}
+checkHealth();
+setInterval(checkHealth, 15000);
+
+// ---------- Threat dial ----------
+const DIAL_CIRC = 389.6; // 2 * PI * 62
+function updateDial(scorePercent, decision) {
+  const fill = document.getElementById("dial-fill");
+  const scoreLabel = document.getElementById("dial-score");
+  const offset = DIAL_CIRC - (DIAL_CIRC * scorePercent) / 100;
+  fill.style.strokeDashoffset = offset;
+  scoreLabel.textContent = `${Math.round(scorePercent)}%`;
+
+  let color = "var(--text-muted)";
+  if (decision === "warn") color = "var(--warn)";
+  if (decision === "alert") color = "var(--danger)";
+  if (decision === "monitor" && scorePercent === 0) color = "var(--safe)";
+  fill.style.stroke = color;
+}
+
+function updateBadge(decision) {
+  const badge = document.getElementById("decision-badge");
+  badge.className = "decision-badge";
+  if (decision === "warn") { badge.classList.add("warn"); badge.textContent = "⚠ WARN"; }
+  else if (decision === "alert") { badge.classList.add("alert"); badge.textContent = "🚨 ALERT"; }
+  else { badge.textContent = "MONITORING"; }
+}
+
+function updateCategories(categories) {
+  const list = document.getElementById("categories-list");
+  list.innerHTML = "";
+  (categories || []).forEach(c => {
+    const chip = document.createElement("span");
+    chip.className = "category-chip";
+    chip.textContent = c.replaceAll("_", " ");
+    list.appendChild(chip);
+  });
+}
+
+function addTickerLine(text, flagged) {
+  const ticker = document.getElementById("ticker");
+  if (ticker.querySelector(".empty-state")) ticker.innerHTML = "";
+  const line = document.createElement("div");
+  line.className = "ticker-line" + (flagged ? " flagged" : "");
+  const time = document.createElement("span");
+  time.className = "ticker-time";
+  time.textContent = new Date().toLocaleTimeString("en-IN", { hour12: false });
+  const body = document.createElement("span");
+  body.textContent = text;
+  line.appendChild(time);
+  line.appendChild(body);
+  ticker.appendChild(line);
+  ticker.scrollTop = ticker.scrollHeight;
+}
+
+function showAlert(message) {
+  const box = document.getElementById("alert-box");
+  const text = document.getElementById("alert-text");
+  if (message) {
+    text.textContent = message;
+    box.classList.add("show");
+  } else {
+    box.classList.remove("show");
+  }
+}
+
+function resetSim() {
+  updateDial(0, "monitor");
+  updateBadge("monitor");
+  updateCategories([]);
+  showAlert("");
+  document.getElementById("ticker").innerHTML =
+    '<div class="empty-state">No active session. Run a call above to begin monitoring.</div>';
+}
+
+// ---------- Run a simulated call ----------
+let simRunning = false;
+
+async function runCall(chunks) {
+  if (simRunning) return;
+  simRunning = true;
+  document.getElementById("run-scam").disabled = true;
+  document.getElementById("run-legit").disabled = true;
+
+  resetSim();
+  document.getElementById("ticker").innerHTML = "";
+
+  const sessionId = "SIM_" + Date.now();
+  const lang = document.getElementById("lang-select").value;
+
+  for (let i = 1; i <= chunks.length; i++) {
+    const partialChunks = chunks.slice(0, i);
+    let data;
+    try {
+      const res = await fetch(`${API_BASE}/webhook/ivr_session`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          session_id: sessionId,
+          transcript_chunks: partialChunks,
+          lang: lang,
+          city: "Bengaluru",
+          lat: 12.9716,
+          lon: 77.5946,
+        }),
+      });
+      data = await res.json();
+    } catch (e) {
+      addTickerLine("⚠ Could not reach server — check API_BASE and CORS settings.", true);
+      break;
+    }
+
+    const flagged = data.decision === "warn" || data.decision === "alert";
+    addTickerLine(chunks[i - 1], flagged);
+    updateDial((data.suspicion_score || 0) * 100, data.decision);
+    updateBadge(data.decision);
+    updateCategories(data.risk_categories_seen);
+    if (data.decision === "alert") showAlert(data.alert_message);
+
+    await new Promise(r => setTimeout(r, 900));
+  }
+
+  document.getElementById("run-scam").disabled = false;
+  document.getElementById("run-legit").disabled = false;
+  simRunning = false;
+  loadIntelligence();
+}
+
+document.getElementById("run-scam").addEventListener("click", () => runCall(SCAM_CALL));
+document.getElementById("run-legit").addEventListener("click", () => runCall(LEGIT_CALL));
+document.getElementById("reset-sim").addEventListener("click", resetSim);
+
+// ---------- Intelligence panel ----------
+async function loadIntelligence() {
+  try {
+    const [campRes, hotRes] = await Promise.all([
+      fetch(`${API_BASE}/intelligence/campaigns`),
+      fetch(`${API_BASE}/intelligence/hotspots?min_incidents=1`),
+    ]);
+    const campData = await campRes.json();
+    const hotData = await hotRes.json();
+
+    const campList = document.getElementById("campaigns-list");
+    if (campData.campaigns && campData.campaigns.length > 0) {
+      campList.innerHTML = "";
+      campData.campaigns.forEach(c => {
+        const card = document.createElement("div");
+        card.className = "intel-card";
+        card.innerHTML = `
+          <div class="intel-card-title"><span>${c.victim_count} linked victims</span><span>${Math.round(c.avg_confidence * 100)}%</span></div>
+          <div class="intel-card-meta">Shared patterns: ${c.common_pattern_ids.join(", ")}</div>`;
+        campList.appendChild(card);
+      });
+    } else {
+      campList.innerHTML = `<div class="empty-state">No campaigns detected yet (need ≥2 linked victims). Tracked incidents: ${campData.total_incidents_tracked || 0}</div>`;
+    }
+
+    const hotList = document.getElementById("hotspots-list");
+    if (hotData.hotspots && hotData.hotspots.length > 0) {
+      hotList.innerHTML = "";
+      hotData.hotspots.forEach(h => {
+        const card = document.createElement("div");
+        card.className = "intel-card";
+        card.innerHTML = `
+          <div class="intel-card-title"><span>${h.city}</span><span>${h.incident_count} incidents</span></div>
+          <div class="intel-card-meta">avg confidence ${Math.round(h.avg_confidence * 100)}%</div>`;
+        hotList.appendChild(card);
+      });
+    } else {
+      hotList.innerHTML = `<div class="empty-state">No hotspots logged yet.</div>`;
+    }
+  } catch (e) {
+    // silent -- health pill already communicates server reachability
+  }
+}
+document.getElementById("refresh-intel").addEventListener("click", loadIntelligence);
+loadIntelligence();
+
+// ---------- Quick message checker ----------
+document.getElementById("checker-btn").addEventListener("click", async () => {
+  const input = document.getElementById("checker-input");
+  const resultBox = document.getElementById("checker-result");
+  const text = input.value.trim();
+  if (!text) return;
+
+  resultBox.classList.add("show");
+  resultBox.innerHTML = "Checking...";
+
+  const lang = document.getElementById("lang-select").value;
+  try {
+    const res = await fetch(`${API_BASE}/webhook/message`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text, lang }),
+    });
+    const data = await res.json();
+    const confPct = Math.round((data.confidence || 0) * 100);
+    let html = `Confidence: <span class="conf">${confPct}%</span>`;
+    if (data.alert_message) {
+      html += `<div class="alert-box show" style="margin-top:10px;"><div class="alert-heading">⚠ Result</div>${data.alert_message}</div>`;
+    } else {
+      html += `<div style="margin-top:8px;">No strong scam indicators detected in this message.</div>`;
+    }
+    resultBox.innerHTML = html;
+  } catch (e) {
+    resultBox.innerHTML = "⚠ Could not reach server — check API_BASE and CORS settings.";
+  }
+});
+
+document.getElementById("checker-input").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") document.getElementById("checker-btn").click();
+});
+</script>
+
+</body>
+</html>

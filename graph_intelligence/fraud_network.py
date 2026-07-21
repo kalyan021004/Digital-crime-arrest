@@ -38,6 +38,20 @@ from db.mongo import incident_collection
 class FraudNetworkGraph:
     def __init__(self):
         self.graph = nx.Graph()
+        self.collection = incident_collection
+
+
+
+    def build_graph(self):
+
+      self.graph.clear()
+
+      incidents = list(self.collection.find())
+
+      for incident in incidents:
+        self.add_incident(incident)
+
+
 
     def add_incident(self, incident_report: Dict[str, Any]):
         """
@@ -94,14 +108,19 @@ class FraudNetworkGraph:
         campaigns.sort(key=lambda c: (c["victim_count"], c["campaign_strength"]), reverse=True)
         return campaigns
 
-    def summary(self) -> Dict[str, Any]:
-        campaigns = self.detect_campaigns()
-        return {
-            "total_incidents_tracked": self.graph.number_of_nodes(),
-            "suspected_campaigns": len(campaigns),
-            "campaigns": campaigns,
-        }
 
+
+    def summary(self):
+
+      self.build_graph()
+
+      campaigns = self.detect_campaigns()
+
+      return {
+        "total_incidents_tracked": self.graph.number_of_nodes(),
+        "suspected_campaigns": len(campaigns),
+        "campaigns": campaigns,
+    }
 
 if __name__ == "__main__":
     # Demo: simulate 4 victims, 3 hit by the same fraud ring (shared SP002+SP003 pattern),
