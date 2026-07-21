@@ -1,29 +1,33 @@
-def load_and_index(collection, patterns):
+from qdrant_client.models import PointStruct
 
-    if collection.count() >= len(patterns):
-        return
 
-    ids = []
-    docs = []
-    metadata = []
+def load_and_index(client, collection_name, embed_fn, patterns):
 
-    for p in patterns:
+    points = []
 
-        ids.append(p["id"])
+    texts = [
+        p["text"] + " Example phrases: " + " | ".join(p["example_phrases"])
+        for p in patterns
+    ]
 
-        docs.append(
-            p["text"] +
-            " Example phrases: " +
-            " | ".join(p["example_phrases"])
+    embeddings = embed_fn.encode(texts)
+
+    for i, pattern in enumerate(patterns):
+
+        points.append(
+            PointStruct(
+                id=i + 1,
+                vector=embeddings[i].tolist(),
+                payload={
+                    "pattern_id": pattern["id"],
+                    "pattern_name": pattern["pattern_name"],
+                    "category": pattern["category"],
+                    "text": texts[i],
+                },
+            )
         )
 
-        metadata.append({
-            "pattern_name": p["pattern_name"],
-            "category": p["category"]
-        })
-
-    collection.add(
-        ids=ids,
-        documents=docs,
-        metadatas=metadata
+    client.upsert(
+        collection_name=collection_name,
+        points=points,
     )

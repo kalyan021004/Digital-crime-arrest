@@ -1,24 +1,25 @@
-def retrieve(collection, query, top_k=2):
+def retrieve(client, collection_name, embed_fn, query, top_k=2):
 
-    results = collection.query(
-        query_texts=[query],
-        n_results=top_k
+    query_vector = embed_fn.encode([query])[0]
+
+    response = client.query_points(
+        collection_name=collection_name,
+        query=query_vector.tolist(),
+        limit=top_k,
     )
 
     matches = []
 
-    ids = results["ids"][0]
-    docs = results["documents"][0]
-    metas = results["metadatas"][0]
-    distances = results["distances"][0]
+    for point in response.points:
 
-    for i in range(len(ids)):
+        payload = point.payload
+
         matches.append({
-            "id": ids[i],
-            "pattern_name": metas[i]["pattern_name"],
-            "category": metas[i]["category"],
-            "score": 1 - distances[i],   # cosine similarity
-            "snippet": docs[i][:150]
+            "id": payload["pattern_id"],
+            "pattern_name": payload["pattern_name"],
+            "category": payload["category"],
+            "score": point.score,
+            "snippet": payload["text"][:150],
         })
 
     return matches
