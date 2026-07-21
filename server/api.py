@@ -35,7 +35,7 @@ from typing import List, Optional
 
 from rag.knowledge_base import ScamPatternKB
 from agents.graph import process_call_session
-from agents.nodes import SUSPICIOUS_KEYWORDS
+from agents.nodes import SUSPICIOUS_KEYWORDS, RAG_MATCH_THRESHOLD
 from localization.alerts import generate_localized_alert, SUPPORTED_LANGUAGES
 from graph_intelligence.fraud_network import FraudNetworkGraph
 from geospatial.crime_intelligence import GeoCrimeIntelligence
@@ -46,9 +46,32 @@ app = FastAPI(
     version="1.0.0",
 )
 
+from db.mongo import incident_collection  # noqa: E402
+
 _kb = ScamPatternKB()
-_fraud_graph = FraudNetworkGraph()          # in-memory demo store; swap for a real DB in production
-_geo_intel = GeoCrimeIntelligence()          # same
+_fraud_graph = FraudNetworkGraph()
+_geo_intel = GeoCrimeIntelligence()
+
+
+def _hydrate_fraud_graph():
+    """
+    Rebuild the in-memory fraud graph from persisted incidents at startup.
+
+    The graph itself is an in-memory NetworkX structure, so without this it
+    started EMPTY on every restart -- /intelligence/campaigns would report zero
+    campaigns even with hundreds of incidents sitting in the database. Incidents
+    were being persisted and then never read back.
+    """
+    count = 0
+    for incident in incident_collection.find():
+        _fraud_graph.add_incident(incident)
+        count += 1
+    if count:
+        print(f"[api] Hydrated fraud graph with {count} persisted incident(s)")
+    return count
+
+
+_hydrate_fraud_graph()
 
 
 # ---------- Request/response models ----------
@@ -83,10 +106,17 @@ def webhook_message(req: MessageCheckRequest):
     text_lower = req.text.lower()
     keyword_score = min(sum(w for kw, w in SUSPICIOUS_KEYWORDS.items() if kw in text_lower), 1.0)
     matches = _kb.retrieve(req.text, top_k=3)
-    strong_matches = [m for m in matches if m["distance"] < 0.85]
+
+    # BUGFIX: rag/retriever.py returns "score" (cosine SIMILARITY, 1 - distance),
+    # never "distance". Reading m["distance"] raised KeyError on every call to
+    # this endpoint. Higher score = closer match, so the comparison flips too.
+    strong_matches = [m for m in matches if m["score"] > RAG_MATCH_THRESHOLD]
 
     categories = list({m["category"] for m in strong_matches})
-    confidence = max(keyword_score, 1 - min((m["distance"] for m in strong_matches), default=1.0))
+    confidence = max(
+        keyword_score,
+        max((m["score"] for m in strong_matches), default=0.0),
+    )
 
     alert = ""
     if confidence >= 0.45:
@@ -107,7 +137,16 @@ def webhook_ivr_session(req: SessionAnalyzeRequest):
     Also logs ALERT-level incidents into the fraud network graph and geo intel
     layers so cross-victim patterns and hotspots can be detected.
     """
-    final_state = process_call_session(req.session_id, req.transcript_chunks)
+    # Pass location and language through to the pipeline so the incident report
+    # is geo-tagged at source, rather than only being attached afterwards.
+    final_state = process_call_session(
+        session_id=req.session_id,
+        chunks=req.transcript_chunks,
+        city=req.city,
+        latitude=req.lat,
+        longitude=req.lon,
+        language=req.lang,
+    )
 
     localized_alert = ""
     if final_state["decision"] in ("warn", "alert"):

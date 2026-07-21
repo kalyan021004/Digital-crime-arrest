@@ -28,7 +28,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from mcp.server.fastmcp import FastMCP
 from rag.knowledge_base import ScamPatternKB
 from agents.graph import process_call_session
-from agents.nodes import SUSPICIOUS_KEYWORDS
+from agents.nodes import SUSPICIOUS_KEYWORDS, RAG_MATCH_THRESHOLD
 
 mcp = FastMCP("digital-arrest-shield")
 _kb = ScamPatternKB()
@@ -47,7 +47,11 @@ def check_transcript_chunk(text: str) -> dict:
         sum(w for kw, w in SUSPICIOUS_KEYWORDS.items() if kw in text_lower), 1.0
     )
     matches = _kb.retrieve(text, top_k=3)
-    strong_matches = [m for m in matches if m["distance"] < 1.8]
+    # BUGFIX: retriever.py returns "score" (cosine similarity), not "distance".
+    # The old `m["distance"] < 1.8` both raised KeyError and, had the key
+    # existed, would have admitted every candidate since distance maxes out
+    # at 1.0 -- so nothing was ever filtered.
+    strong_matches = [m for m in matches if m["score"] > RAG_MATCH_THRESHOLD]
 
     return {
         "keyword_suspicion_score": round(keyword_score, 2),

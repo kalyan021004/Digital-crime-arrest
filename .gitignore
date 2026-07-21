@@ -10,3 +10,12 @@ wheels/
 .venv
 .env
 
+# Chroma vector store — a LOCAL BUILD ARTIFACT, not source.
+# It is regenerated from data/scam_patterns.json by rag/indexer.py on first run.
+# These are binary files that change every time anyone runs the pipeline, so
+# committing them produces unmergeable conflicts on every pull.
+chroma_db/
+
+# OS noise
+.DS_Store
+Thumbs.db

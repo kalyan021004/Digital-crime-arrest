@@ -57,9 +57,9 @@ def build_graph():
 def process_call_session(
     session_id: str,
     chunks: list,
-    city: str,
-    latitude: float,
-    longitude: float,
+    city: str = None,
+    latitude: float = None,
+    longitude: float = None,
     language: str = "en",
 ) -> ScamDetectionState:
     """
@@ -70,6 +70,15 @@ def process_call_session(
     session_id : str
     chunks : list
         Transcript chunks.
+    city, latitude, longitude : optional
+        Caller location, used only for geospatial hotspot aggregation.
+        These default to None because location is genuinely optional -- a
+        WhatsApp message check or an IVR call may have no location attached,
+        and scam detection must not depend on it.
+
+        (Previously these were REQUIRED positional arguments, which meant every
+        caller in the project -- main.py, server/api.py and mcp_server/server.py
+        -- raised TypeError on invocation. Nothing could run.)
     language : str
         User's preferred language.
         Supported:
@@ -85,13 +94,12 @@ def process_call_session(
         "session_id": session_id,
         "transcript_chunks": [],
         "risk_categories_seen": [],
+        "matched_pattern_evidence": [],
         "suspicion_score": 0.0,
         "decision": "monitor",
         "city": city,
         "latitude": latitude,
         "longitude": longitude,
-
-        # NEW
         "language": language,
     }
 

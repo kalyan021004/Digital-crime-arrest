@@ -35,6 +35,19 @@ SUSPICIOUS_KEYWORDS = {
     "transfer": 0.15, "security deposit": 0.2, "lookout notice": 0.25, "non-bailable": 0.25,
 }
 
+# Minimum cosine SIMILARITY (as returned by rag/retriever.py, = 1 - distance)
+# for a retrieved pattern to count as a real match. Higher = stricter.
+#
+# Single source of truth. Previously the three entry points each hard-coded a
+# DIFFERENT threshold -- nodes.py used score > 0.75, server/api.py used
+# distance < 0.85, mcp_server/server.py used distance < 1.8 -- so the same text
+# could be judged three different ways depending on which door it came through.
+#
+# NOTE: 0.75 is inherited, not calibrated. bge-small tends to score unrelated
+# short sentences around 0.6-0.7, so this sits close to the noise floor and
+# should be tuned against a labelled set of legitimate calls before deployment.
+RAG_MATCH_THRESHOLD = 0.75
+
 
 def suspicion_filter(state: ScamDetectionState) -> dict:
     """Node 1: fast, cheap keyword heuristic. Runs on every chunk before anything expensive."""
@@ -50,10 +63,9 @@ def suspicion_filter(state: ScamDetectionState) -> dict:
 def rag_retrieval(state: ScamDetectionState) -> dict:
     """Node 2: retrieve nearest known scam patterns from the RAG knowledge base."""
     matches = _kb.retrieve(state["current_chunk"], top_k=2)
-    # With cosine distance (0 = identical, 1 = no similarity), a real semantic
-    # overlap with a known scam pattern typically lands well under 0.85.
-    # Text with zero shared vocabulary sits exactly at distance 1.0.
-    strong_matches = [m for m in matches if m["score"] > 0.75]
+    # retriever.py returns "score" as cosine SIMILARITY (1 = identical,
+    # 0 = unrelated), so a strong match is a HIGH score.
+    strong_matches = [m for m in matches if m["score"] > RAG_MATCH_THRESHOLD]
     return {"matched_patterns": strong_matches}
 
 
@@ -69,21 +81,53 @@ def compound_risk_correlator(state: ScamDetectionState) -> dict:
     for m in state.get("matched_patterns", []):
         seen.add(m["category"])
 
-    # Base score blends the keyword filter with RAG match confidence
+    # Accumulate the evidence itself, not just the category labels. Node 2
+    # overwrites `matched_patterns` on every chunk, so without this the
+    # incident report would only ever cite the final chunk's matches and
+    # every earlier piece of evidence would be lost.
+    evidence = list(state.get("matched_pattern_evidence", []))
+    already_cited = {e["id"] for e in evidence}
+    for m in state.get("matched_patterns", []):
+        if m["id"] not in already_cited:
+            evidence.append({
+                "id": m["id"],
+                "pattern_name": m["pattern_name"],
+                "category": m["category"],
+                "score": round(m["score"], 4),
+                "chunk_index": len(state.get("transcript_chunks", [])) - 1,
+                "chunk_text": state.get("current_chunk", ""),
+            })
+            already_cited.add(m["id"])
+
+    # Best single-chunk signal seen in THIS chunk: keyword filter or RAG match.
+    # retriever.py returns "score" as cosine SIMILARITY (1 - distance), so
+    # higher = closer to a known scam pattern.
     base = state.get("keyword_suspicion_score", 0.0)
     if state.get("matched_patterns"):
-        rag_confidence = max(m["score"] for m in state["matched_patterns"])  # cosine distance is already 0..1
+        rag_confidence = max(m["score"] for m in state["matched_patterns"])
         base = max(base, rag_confidence)
 
-    # Compound bonus: reward co-occurrence of distinct risk categories across the session
+    # Compound bonus: co-occurrence of DISTINCT risk categories across the
+    # session is the diagnostic signal. This is a property of the session as a
+    # whole, so it is computed fresh from `seen` each time -- never accumulated.
     compound_bonus = 0.15 * (len(seen) - 1) if len(seen) > 1 else 0.0
 
-    # Running score is cumulative but capped at 1.0; never decreases (a case file only strengthens)
+    # BUGFIX: this previously read `max(prior, base) + compound_bonus`, which
+    # re-added the bonus on EVERY chunk. Once two categories had been seen, the
+    # score ratcheted upward by +0.15 per chunk regardless of what was actually
+    # said, so any sufficiently long call eventually alerted. That is a
+    # false-positive generator, and FPR is the metric this project is judged on.
+    #
+    # Correct behaviour: the session score is the strongest evidence seen so far
+    # plus the compound bonus for the current category set. It is monotonic
+    # (a case file only strengthens) because of the max() against prior, but it
+    # cannot grow without new evidence.
     prior = state.get("suspicion_score", 0.0)
-    new_score = min(1.0, max(prior, base) + compound_bonus)
+    new_score = min(1.0, max(prior, base + compound_bonus))
 
     return {
         "risk_categories_seen": list(seen),
+        "matched_pattern_evidence": evidence,
         "suspicion_score": new_score,
     }
 
@@ -120,34 +164,33 @@ def action_node(state: ScamDetectionState) -> dict:
     incident_report = {}
 
     if decision == "alert":
+        # Use the ACCUMULATED evidence from the whole session, not
+        # state["matched_patterns"], which node 2 overwrites every chunk and
+        # therefore only ever holds the final chunk's matches.
+        evidence = state.get("matched_pattern_evidence", [])
 
         incident_report = {
+            "session_id": state["session_id"],
+            "confidence": score,
+            "city": state.get("city"),
+            "latitude": state.get("latitude"),
+            "longitude": state.get("longitude"),
+            "matched_pattern_ids": [e["id"] for e in evidence],
+            # Per-pattern provenance: which chunk triggered which pattern and
+            # how strongly. This is what makes the report auditable rather than
+            # just a score.
+            "evidence": evidence,
+            "risk_categories": categories,
+            "transcript_snapshot": state.get("transcript_chunks", []),
+            "detected_at_chunk": len(state.get("transcript_chunks", [])),
+        }
 
-    "session_id": state["session_id"],
-
-    "confidence": score,
-
-    "city": state.get("city"),
-
-    "latitude": state.get("latitude"),
-
-    "longitude": state.get("longitude"),
-
-    "matched_pattern_ids": [
-        m["id"]
-        for m in state.get("matched_patterns", [])
-    ],
-
-    "risk_categories": categories,
-
-    "transcript_snapshot": state.get("transcript_chunks", [])
-    }
-        # Save permanently
         incident_collection.update_one(
-        {"session_id": incident_report["session_id"]},
-        {"$set": incident_report},
-        upsert=True
+            {"session_id": incident_report["session_id"]},
+            {"$set": incident_report},
+            upsert=True,
         )
+
     return {
         "alert_message": alert_message,
         "incident_report": incident_report,

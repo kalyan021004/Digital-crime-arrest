@@ -4,22 +4,46 @@ Reads incidents directly from MongoDB.
 """
 
 from collections import defaultdict
-from pymongo import MongoClient
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
-
-client = MongoClient(os.getenv("MONGODB_URI"))
-
-db = client["digital_arrest_shield"]
-incident_collection = db["incidents"]
+# BUGFIX: this module used to open its OWN MongoClient and read from a
+# collection named "incidents", while agents/nodes.py wrote alerts to
+# "incident_reports". The names never matched, so every hotspot and heatmap
+# query silently returned an empty list no matter how many incidents existed.
+#
+# It also bypassed db/mongo.py's connection handling, so it would crash on an
+# unreachable database instead of degrading gracefully.
+#
+# Both problems go away by reusing the single shared collection.
+from db.mongo import incident_collection
 
 
 class GeoCrimeIntelligence:
 
     def __init__(self):
         self.collection = incident_collection
+
+    def add_incident(self, session_id, latitude, longitude, city,
+                     confidence, risk_categories):
+        """
+        Record (or update) an incident's location for hotspot aggregation.
+
+        server/api.py already called this method -- it just never existed,
+        raising AttributeError on every alert-level session that carried
+        location data. Upserts on session_id so replaying a session doesn't
+        double-count it as two separate incidents in the same city.
+        """
+        self.collection.update_one(
+            {"session_id": session_id},
+            {"$set": {
+                "session_id": session_id,
+                "city": city,
+                "latitude": latitude,
+                "longitude": longitude,
+                "confidence": confidence,
+                "risk_categories": risk_categories,
+            }},
+            upsert=True,
+        )
 
     def city_hotspots(self, min_incidents: int = 2):
 
@@ -68,11 +92,15 @@ class GeoCrimeIntelligence:
 
         for incident in incidents:
 
-            if "latitude" not in incident or "longitude" not in incident:
-                continue
+            lat = incident.get("latitude")
+            lon = incident.get("longitude")
 
-            lat = incident["latitude"]
-            lon = incident["longitude"]
+            # Location is optional (a WhatsApp check has no coordinates), so
+            # the key may be PRESENT but None. The old `"latitude" not in
+            # incident` test passed in that case and then crashed on
+            # round(None / cell_size).
+            if lat is None or lon is None:
+                continue
 
             cell = (
                 round(lat / cell_size_deg) * cell_size_deg,
@@ -110,19 +138,24 @@ class GeoCrimeIntelligence:
 
     @staticmethod
     def _centroid(incidents):
+        """
+        Mean position of the incidents that actually have coordinates.
 
-        if not incidents:
+        Skips incidents with missing or None lat/lon rather than raising --
+        a city can legitimately have incidents reported without location
+        (e.g. a WhatsApp message check), and one of those should not blow up
+        the whole hotspot report.
+        """
+        located = [
+            i for i in incidents
+            if i.get("latitude") is not None and i.get("longitude") is not None
+        ]
+
+        if not located:
             return None
 
-        lat = sum(
-            i["latitude"]
-            for i in incidents
-        ) / len(incidents)
-
-        lon = sum(
-            i["longitude"]
-            for i in incidents
-        ) / len(incidents)
+        lat = sum(i["latitude"] for i in located) / len(located)
+        lon = sum(i["longitude"] for i in located) / len(located)
 
         return {
             "lat": round(lat, 4),
