@@ -1,0 +1,2601 @@
+[
+  {
+    "session_id": "LEGIT_032",
+    "label": "legit",
+    "negative_type": "loan_emi",
+    "difficulty": "hard",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "Hello, this is Deepa from State Bank of India loan servicing. This is a reminder that your EMI is due on the 5th.",
+      "You can pay through auto-debit, the mobile app, or at the branch.",
+      "If you have already paid, please ignore this message. There is no penalty yet.",
+      "Feel free to call our official helpline if you have questions. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_023",
+    "label": "legit",
+    "negative_type": "job_interview",
+    "difficulty": "easy",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "chunks": [
+      "Good morning, this is Kavita from the HR team regarding the position you applied for.",
+      "We would like to schedule your interview for next week. Which day works for you?",
+      "The interview will be held at our office; the address is on your offer email.",
+      "Looking forward to meeting you. Have a great day."
+    ]
+  },
+  {
+    "session_id": "SCAM_032",
+    "label": "scam",
+    "scam_type": "ed_laundering",
+    "difficulty": "positive",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "This is the Enforcement Directorate. Your PAN card has been linked to a large money laundering investigation.",
+      "A company under investigation has used your identity to open a bank account at ICICI Bank.",
+      "You have only 30 minutes to comply, or a non-bailable warrant will be issued and you will be taken into digital custody.",
+      "Officer Ravi will remain on video call to monitor you. Do not contact your family or lawyer during this period.",
+      "Declare your total bank balance and transfer Rs 5,00,000 to this account for verification. It is fully refundable."
+    ]
+  },
+  {
+    "session_id": "SCAM_047",
+    "label": "scam",
+    "scam_type": "aadhaar_case",
+    "difficulty": "positive",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "chunks": [
+      "Namaste, I am calling regarding your Aadhaar card which has been misused in a criminal case.",
+      "A parcel containing 500 grams of MDMA was seized and your Aadhaar was used to book it.",
+      "This is a digital arrest. You are under investigation and cannot leave your house or end this call.",
+      "Senior officer Arun is watching you on camera. Any attempt to inform others will be treated as obstruction.",
+      "To clear your name, move Rs 5,00,000 to the RBI-monitored account immediately. The money is safe and refundable."
+    ]
+  },
+  {
+    "session_id": "SCAM_046",
+    "label": "scam",
+    "scam_type": "ed_laundering",
+    "difficulty": "positive",
+    "city": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "chunks": [
+      "This is the Enforcement Directorate. Your PAN card has been linked to a large money laundering investigation.",
+      "A company under investigation has used your identity to open a bank account at ICICI Bank.",
+      "You have only 30 minutes to comply, or a non-bailable warrant will be issued and you will be taken into digital custody.",
+      "Officer Priya will remain on video call to monitor you. Do not contact your family or lawyer during this period.",
+      "Declare your total bank balance and transfer Rs 50,000 to this account for verification. It is fully refundable."
+    ]
+  },
+  {
+    "session_id": "LEGIT_040",
+    "label": "legit",
+    "negative_type": "bank_kyc",
+    "difficulty": "hard",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "Hello, this is Rajesh calling from Punjab National Bank. Your account KYC is due for a routine update.",
+      "You can complete the verification at any branch, or through our official mobile app at your convenience.",
+      "We will never ask for your OTP, PIN, or a money transfer over the phone.",
+      "Please visit your nearest branch within 30 days. Thank you for banking with us."
+    ]
+  },
+  {
+    "session_id": "LEGIT_054",
+    "label": "legit",
+    "negative_type": "credit_card",
+    "difficulty": "hard",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "Hi, this is Meena from Axis Bank regarding your recent credit card application.",
+      "I just need to confirm your current mailing address for delivery of the card.",
+      "The card will arrive within 5 to 7 working days by registered post.",
+      "Is there anything else I can help you with today? Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_015",
+    "label": "scam",
+    "scam_type": "parcel_customs",
+    "difficulty": "positive",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Hello, I am calling from the Customs department. A parcel booked in your name has been intercepted at the airport.",
+      "On inspection it was found to contain banned psychotropic drugs. This is a serious offence under the NDPS Act.",
+      "This is now a confidential investigation. Do not disconnect this call or discuss it with anyone, or you will be arrested immediately.",
+      "I am transferring your case to senior officer Suresh of the Narcotics Control Bureau. Please stay on video call for verification.",
+      "To prove your innocence and avoid arrest, transfer Rs 2,00,000 to this RBI verification account. It will be fully refunded after the enquiry."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_004",
+    "label": "scam",
+    "scam_type": "adv_kyc_expiry",
+    "difficulty": "adversarial",
+    "city": "Kolkata",
+    "latitude": 22.5726,
+    "longitude": 88.3639,
+    "chunks": [
+      "Hello, this is Priya from the compliance unit. Your verification has lapsed and your account is now restricted.",
+      "I can help you restore it right now, but you will need to follow my steps exactly and stay on the call.",
+      "Kindly do not visit the branch for this, it will only delay things and complicate your file.",
+      "A small clearance fee of Rs 5,00,000 is required to reactivate, which is adjusted back into your account.",
+      "Please transfer it to the reactivation account I am sharing so we can lift the restriction today."
+    ]
+  },
+  {
+    "session_id": "LEGIT_058",
+    "label": "legit",
+    "negative_type": "loan_emi",
+    "difficulty": "hard",
+    "city": "Surat",
+    "latitude": 21.1702,
+    "longitude": 72.8311,
+    "chunks": [
+      "Hello, this is Suresh from Punjab National Bank loan servicing. This is a reminder that your EMI is due on the 5th.",
+      "You can pay through auto-debit, the mobile app, or at the branch.",
+      "If you have already paid, please ignore this message. There is no penalty yet.",
+      "Feel free to call our official helpline if you have questions. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_001",
+    "label": "scam",
+    "scam_type": "parcel_customs",
+    "difficulty": "positive",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Hello, I am calling from the Customs department. A parcel booked in your name has been intercepted at the airport.",
+      "On inspection it was found to contain illegal narcotic substances. This is a serious offence under the NDPS Act.",
+      "This is now a confidential investigation. Do not disconnect this call or discuss it with anyone, or you will be arrested immediately.",
+      "I am transferring your case to senior officer Rajesh of the Narcotics Control Bureau. Please stay on video call for verification.",
+      "To prove your innocence and avoid arrest, transfer Rs 90,000 to this RBI verification account. It will be fully refunded after the enquiry."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_002",
+    "label": "scam",
+    "scam_type": "adv_security_hold",
+    "difficulty": "adversarial",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "chunks": [
+      "Hello, this is Arun from the HDFC Bank security desk. We have placed a temporary hold on your profile.",
+      "There is an irregularity we must resolve together, and I will need you to stay with me on the call.",
+      "Please don't discuss this with branch staff or family yet; it could interfere with the security review.",
+      "To lift the hold, move your balance to the protected account I provide so it stays safe during the check.",
+      "This is only temporary and the funds return to you once the review completes."
+    ]
+  },
+  {
+    "session_id": "SCAM_041",
+    "label": "scam",
+    "scam_type": "court_summons",
+    "difficulty": "positive",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "This is an automated call from the honourable court. A summons has been issued against you for a financial fraud case.",
+      "Press one to speak to the case officer. ... You are now connected to investigating officer Divya.",
+      "An arrest warrant is active. If you disconnect, police will be sent to your address within the hour.",
+      "This matter is confidential and under digital surveillance. Stay on the line and do not alert anyone.",
+      "To convert the arrest warrant to bail, pay Rs 90,000 into the court's verification account now."
+    ]
+  },
+  {
+    "session_id": "LEGIT_009",
+    "label": "legit",
+    "negative_type": "hospital_appointment",
+    "difficulty": "easy",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "Hello, this is Arun from the hospital front desk.",
+      "I am calling to confirm your doctor's appointment scheduled for tomorrow morning.",
+      "Please arrive 15 minutes early and bring your previous reports.",
+      "Reply or call back if you need to reschedule. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_033",
+    "label": "legit",
+    "negative_type": "telecom_upgrade",
+    "difficulty": "medium",
+    "city": "Kolkata",
+    "latitude": 22.5726,
+    "longitude": 88.3639,
+    "chunks": [
+      "Hi, this is Sunita from your mobile network's customer care.",
+      "You are eligible for an upgraded data plan at the same monthly price.",
+      "There is no obligation. You can accept the offer through the official app or by replying to our SMS.",
+      "Have a good day, and thank you for staying with us."
+    ]
+  },
+  {
+    "session_id": "LEGIT_064",
+    "label": "legit",
+    "negative_type": "delivery_otp",
+    "difficulty": "easy",
+    "city": "Mumbai",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "chunks": [
+      "Your food order has been picked up and is on the way.",
+      "The delivery partner will arrive in about 20 minutes.",
+      "Please share the four-digit OTP with the partner at the door to confirm delivery.",
+      "Enjoy your meal!"
+    ]
+  },
+  {
+    "session_id": "LEGIT_057",
+    "label": "legit",
+    "negative_type": "insurance_renewal",
+    "difficulty": "hard",
+    "city": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "chunks": [
+      "Namaste, this is Pooja from your life insurance company regarding your policy renewal.",
+      "Your premium is due next month. You can pay online through our official portal or at any branch.",
+      "Renewing on time keeps your coverage active. No urgency, you have until the due date.",
+      "Would you like me to email you the renewal link? Thank you for your time."
+    ]
+  },
+  {
+    "session_id": "SCAM_012",
+    "label": "scam",
+    "scam_type": "aadhaar_case",
+    "difficulty": "positive",
+    "city": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "chunks": [
+      "Namaste, I am calling regarding your Aadhaar card which has been misused in a criminal case.",
+      "A parcel containing 5 fake passports was seized and your Aadhaar was used to book it.",
+      "This is a digital arrest. You are under investigation and cannot leave your house or end this call.",
+      "Senior officer Divya is watching you on camera. Any attempt to inform others will be treated as obstruction.",
+      "To clear your name, move Rs 2,00,000 to the RBI-monitored account immediately. The money is safe and refundable."
+    ]
+  },
+  {
+    "session_id": "LEGIT_061",
+    "label": "legit",
+    "negative_type": "hospital_appointment",
+    "difficulty": "easy",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "Hello, this is Pooja from the hospital front desk.",
+      "I am calling to confirm your doctor's appointment scheduled for tomorrow morning.",
+      "Please arrive 15 minutes early and bring your previous reports.",
+      "Reply or call back if you need to reschedule. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_027",
+    "label": "legit",
+    "negative_type": "bank_kyc",
+    "difficulty": "hard",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "Hello, this is Sunita calling from State Bank of India. Your account KYC is due for a routine update.",
+      "You can complete the verification at any branch, or through our official mobile app at your convenience.",
+      "We will never ask for your OTP, PIN, or a money transfer over the phone.",
+      "Please visit your nearest branch within 30 days. Thank you for banking with us."
+    ]
+  },
+  {
+    "session_id": "LEGIT_010",
+    "label": "legit",
+    "negative_type": "job_interview",
+    "difficulty": "easy",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "Good morning, this is Sanjay from the HR team regarding the position you applied for.",
+      "We would like to schedule your interview for next week. Which day works for you?",
+      "The interview will be held at our office; the address is on your offer email.",
+      "Looking forward to meeting you. Have a great day."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_012",
+    "label": "scam",
+    "scam_type": "adv_kyc_expiry",
+    "difficulty": "adversarial",
+    "city": "Indore",
+    "latitude": 22.7196,
+    "longitude": 75.8577,
+    "chunks": [
+      "Hello, this is Vikram from the compliance unit. Your verification has lapsed and your account is now restricted.",
+      "I can help you restore it right now, but you will need to follow my steps exactly and stay on the call.",
+      "Kindly do not visit the branch for this, it will only delay things and complicate your file.",
+      "A small clearance fee of Rs 1,20,000 is required to reactivate, which is adjusted back into your account.",
+      "Please transfer it to the reactivation account I am sharing so we can lift the restriction today."
+    ]
+  },
+  {
+    "session_id": "LEGIT_022",
+    "label": "legit",
+    "negative_type": "hospital_appointment",
+    "difficulty": "easy",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "Hello, this is Vikram from the hospital front desk.",
+      "I am calling to confirm your doctor's appointment scheduled for tomorrow morning.",
+      "Please arrive 15 minutes early and bring your previous reports.",
+      "Reply or call back if you need to reschedule. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_057",
+    "label": "scam",
+    "scam_type": "parcel_customs",
+    "difficulty": "positive",
+    "city": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "chunks": [
+      "Hello, I am calling from the Customs department. A parcel booked in your name has been intercepted at the airport.",
+      "On inspection it was found to contain 500 grams of MDMA. This is a serious offence under the NDPS Act.",
+      "This is now a confidential investigation. Do not disconnect this call or discuss it with anyone, or you will be arrested immediately.",
+      "I am transferring your case to senior officer Manoj of the Mumbai Police Crime Branch. Please stay on video call for verification.",
+      "To prove your innocence and avoid arrest, transfer Rs 45,000 to this RBI verification account. It will be fully refunded after the enquiry."
+    ]
+  },
+  {
+    "session_id": "LEGIT_015",
+    "label": "legit",
+    "negative_type": "credit_card",
+    "difficulty": "hard",
+    "city": "Mumbai",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "chunks": [
+      "Hi, this is Arun from ICICI Bank regarding your recent credit card application.",
+      "I just need to confirm your current mailing address for delivery of the card.",
+      "The card will arrive within 5 to 7 working days by registered post.",
+      "Is there anything else I can help you with today? Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_024",
+    "label": "legit",
+    "negative_type": "adv_loan_legal_notice",
+    "difficulty": "adversarial",
+    "city": "Kochi",
+    "latitude": 9.9312,
+    "longitude": 76.2673,
+    "chunks": [
+      "Hello, this is Manoj from State Bank of India's loan recovery department.",
+      "Your loan EMI is overdue by two months, and continued default may lead to legal recovery action.",
+      "You can clear the dues through the official app, netbanking, or at the branch. Please contact us on the official number to discuss a plan.",
+      "We are here to help you regularise the account. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_038",
+    "label": "legit",
+    "negative_type": "delivery_otp",
+    "difficulty": "easy",
+    "city": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "chunks": [
+      "Your food order has been picked up and is on the way.",
+      "The delivery partner will arrive in about 20 minutes.",
+      "Please share the four-digit OTP with the partner at the door to confirm delivery.",
+      "Enjoy your meal!"
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_008",
+    "label": "legit",
+    "negative_type": "adv_loan_legal_notice",
+    "difficulty": "adversarial",
+    "city": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "chunks": [
+      "Hello, this is Deepa from ICICI Bank's loan recovery department.",
+      "Your loan EMI is overdue by two months, and continued default may lead to legal recovery action.",
+      "You can clear the dues through the official app, netbanking, or at the branch. Please contact us on the official number to discuss a plan.",
+      "We are here to help you regularise the account. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_027",
+    "label": "scam",
+    "scam_type": "court_summons",
+    "difficulty": "positive",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "This is an automated call from the honourable court. A summons has been issued against you for a financial fraud case.",
+      "Press one to speak to the case officer. ... You are now connected to investigating officer Anjali.",
+      "An arrest warrant is active. If you disconnect, police will be sent to your address within the hour.",
+      "This matter is confidential and under digital surveillance. Stay on the line and do not alert anyone.",
+      "To convert the arrest warrant to bail, pay Rs 2,50,000 into the court's verification account now."
+    ]
+  },
+  {
+    "session_id": "SCAM_023",
+    "label": "scam",
+    "scam_type": "courier_drugs",
+    "difficulty": "positive",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "Good morning, this is DHL courier services. We have a parcel under your Aadhaar number that could not be delivered.",
+      "The package has been flagged by Customs because it contains illegal narcotic substances.",
+      "You must not disconnect. A police officer will now speak to you regarding this criminal matter.",
+      "A non-bailable warrant has been prepared in your name. To place it on hold you must cooperate fully right now.",
+      "Deposit Rs 5,00,000 as a security amount into the government verification account so we can confirm your accounts are clean."
+    ]
+  },
+  {
+    "session_id": "SCAM_019",
+    "label": "scam",
+    "scam_type": "aadhaar_case",
+    "difficulty": "positive",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "Namaste, I am calling regarding your Aadhaar card which has been misused in a criminal case.",
+      "A parcel containing 500 grams of MDMA was seized and your Aadhaar was used to book it.",
+      "This is a digital arrest. You are under investigation and cannot leave your house or end this call.",
+      "Senior officer Arun is watching you on camera. Any attempt to inform others will be treated as obstruction.",
+      "To clear your name, move Rs 90,000 to the RBI-monitored account immediately. The money is safe and refundable."
+    ]
+  },
+  {
+    "session_id": "SCAM_005",
+    "label": "scam",
+    "scam_type": "aadhaar_case",
+    "difficulty": "positive",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "Namaste, I am calling regarding your Aadhaar card which has been misused in a criminal case.",
+      "A parcel containing banned psychotropic drugs was seized and your Aadhaar was used to book it.",
+      "This is a digital arrest. You are under investigation and cannot leave your house or end this call.",
+      "Senior officer Divya is watching you on camera. Any attempt to inform others will be treated as obstruction.",
+      "To clear your name, move Rs 90,000 to the RBI-monitored account immediately. The money is safe and refundable."
+    ]
+  },
+  {
+    "session_id": "LEGIT_048",
+    "label": "legit",
+    "negative_type": "hospital_appointment",
+    "difficulty": "easy",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "Hello, this is Meena from the hospital front desk.",
+      "I am calling to confirm your doctor's appointment scheduled for tomorrow morning.",
+      "Please arrive 15 minutes early and bring your previous reports.",
+      "Reply or call back if you need to reschedule. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_026",
+    "label": "scam",
+    "scam_type": "aadhaar_case",
+    "difficulty": "positive",
+    "city": "Kochi",
+    "latitude": 9.9312,
+    "longitude": 76.2673,
+    "chunks": [
+      "Namaste, I am calling regarding your Aadhaar card which has been misused in a criminal case.",
+      "A parcel containing 500 grams of MDMA was seized and your Aadhaar was used to book it.",
+      "This is a digital arrest. You are under investigation and cannot leave your house or end this call.",
+      "Senior officer Amit is watching you on camera. Any attempt to inform others will be treated as obstruction.",
+      "To clear your name, move Rs 50,000 to the RBI-monitored account immediately. The money is safe and refundable."
+    ]
+  },
+  {
+    "session_id": "SCAM_025",
+    "label": "scam",
+    "scam_type": "ed_laundering",
+    "difficulty": "positive",
+    "city": "Nagpur",
+    "latitude": 21.1458,
+    "longitude": 79.0882,
+    "chunks": [
+      "This is the Enforcement Directorate. Your PAN card has been linked to a large money laundering investigation.",
+      "A company under investigation has used your identity to open a bank account at ICICI Bank.",
+      "You have only 30 minutes to comply, or a non-bailable warrant will be issued and you will be taken into digital custody.",
+      "Officer Deepa will remain on video call to monitor you. Do not contact your family or lawyer during this period.",
+      "Declare your total bank balance and transfer Rs 5,00,000 to this account for verification. It is fully refundable."
+    ]
+  },
+  {
+    "session_id": "SCAM_058",
+    "label": "scam",
+    "scam_type": "courier_drugs",
+    "difficulty": "positive",
+    "city": "Mumbai",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "chunks": [
+      "Good morning, this is FedEx courier services. We have a parcel under your Aadhaar number that could not be delivered.",
+      "The package has been flagged by Customs because it contains illegal narcotic substances.",
+      "You must not disconnect. A police officer will now speak to you regarding this criminal matter.",
+      "A non-bailable warrant has been prepared in your name. To place it on hold you must cooperate fully right now.",
+      "Deposit Rs 75,000 as a security amount into the government verification account so we can confirm your accounts are clean."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_016",
+    "label": "scam",
+    "scam_type": "adv_kyc_expiry",
+    "difficulty": "adversarial",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "Hello, this is Ravi from the compliance unit. Your verification has lapsed and your account is now restricted.",
+      "I can help you restore it right now, but you will need to follow my steps exactly and stay on the call.",
+      "Kindly do not visit the branch for this, it will only delay things and complicate your file.",
+      "A small clearance fee of Rs 1,20,000 is required to reactivate, which is adjusted back into your account.",
+      "Please transfer it to the reactivation account I am sharing so we can lift the restriction today."
+    ]
+  },
+  {
+    "session_id": "SCAM_038",
+    "label": "scam",
+    "scam_type": "sim_trai",
+    "difficulty": "positive",
+    "city": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "chunks": [
+      "This call is from the Department of Telecommunications. Your mobile number is being used for illegal activities.",
+      "Your SIM card will be permanently blocked within two hours, and an FIR has been registered against you in Chennai.",
+      "Do not cut this call. I am connecting you to officer Neha at the Cyber Crime Branch for a mandatory verification.",
+      "Your bank accounts are linked to a money laundering case. Keep this strictly confidential or you face immediate arrest.",
+      "For verification, transfer Rs 50,000 to the secure account we provide. This is refundable once your identity is cleared."
+    ]
+  },
+  {
+    "session_id": "LEGIT_018",
+    "label": "legit",
+    "negative_type": "insurance_renewal",
+    "difficulty": "hard",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Namaste, this is Amit from your life insurance company regarding your policy renewal.",
+      "Your premium is due next month. You can pay online through our official portal or at any branch.",
+      "Renewing on time keeps your coverage active. No urgency, you have until the due date.",
+      "Would you like me to email you the renewal link? Thank you for your time."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_015",
+    "label": "legit",
+    "negative_type": "adv_move_own_account",
+    "difficulty": "adversarial",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "Hello, this is Vikram from Punjab National Bank. We are migrating old accounts to a new IFSC system.",
+      "Your existing account stays yours; nothing needs to be transferred by you.",
+      "If you have questions, please call our official helpline or visit a branch. We will never ask you to move money to another account.",
+      "You will receive a confirmation SMS from our official sender ID. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_048",
+    "label": "scam",
+    "scam_type": "court_summons",
+    "difficulty": "positive",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "This is an automated call from the honourable court. A summons has been issued against you for a financial fraud case.",
+      "Press one to speak to the case officer. ... You are now connected to investigating officer Sanjay.",
+      "An arrest warrant is active. If you disconnect, police will be sent to your address within the hour.",
+      "This matter is confidential and under digital surveillance. Stay on the line and do not alert anyone.",
+      "To convert the arrest warrant to bail, pay Rs 3,80,000 into the court's verification account now."
+    ]
+  },
+  {
+    "session_id": "LEGIT_025",
+    "label": "legit",
+    "negative_type": "delivery_otp",
+    "difficulty": "easy",
+    "city": "Nagpur",
+    "latitude": 21.1458,
+    "longitude": 79.0882,
+    "chunks": [
+      "Your food order has been picked up and is on the way.",
+      "The delivery partner will arrive in about 20 minutes.",
+      "Please share the four-digit OTP with the partner at the door to confirm delivery.",
+      "Enjoy your meal!"
+    ]
+  },
+  {
+    "session_id": "LEGIT_050",
+    "label": "legit",
+    "negative_type": "mutual_fund_kyc",
+    "difficulty": "hard",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Hello, this is Suresh from your mutual fund distributor.",
+      "Your investment account requires a one-time KYC re-verification as per SEBI norms.",
+      "You can complete it via the official app's video-KYC feature at your convenience.",
+      "We will not ask you to transfer any money for this. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_006",
+    "label": "legit",
+    "negative_type": "adv_sim_kyc",
+    "difficulty": "adversarial",
+    "city": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "chunks": [
+      "This is a service message from your mobile operator regarding SIM re-verification.",
+      "As per regulations, please complete your SIM KYC to avoid interruption of service.",
+      "You can do this free of charge at any authorised store with your ID. We will not ask for an OTP or payment on this call.",
+      "There is no immediate deactivation; you have several weeks. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_009",
+    "label": "scam",
+    "scam_type": "adv_slowburn",
+    "difficulty": "adversarial",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "Hi, am I speaking with the account holder? This is Karan from the central verification cell, nothing to worry about.",
+      "We are just reviewing an issue connected to your identity documents. It should be quick if you cooperate.",
+      "I would request you keep this conversation private for now, and stay on the line so I can guide you.",
+      "There is a small refundable cooperation amount of Rs 5,00,000 needed to close the review from your side.",
+      "Once you send it to the account I share, everything will be cleared and returned to you shortly."
+    ]
+  },
+  {
+    "session_id": "LEGIT_013",
+    "label": "legit",
+    "negative_type": "utility_bill",
+    "difficulty": "easy",
+    "city": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "chunks": [
+      "This is a reminder from your electricity provider's official service.",
+      "Your monthly bill is generated and due in ten days.",
+      "You can pay through the official app, website, or any authorised centre.",
+      "Ignore this message if you have already paid. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_004",
+    "label": "legit",
+    "negative_type": "adv_tax_demand",
+    "difficulty": "adversarial",
+    "city": "Kochi",
+    "latitude": 9.9312,
+    "longitude": 76.2673,
+    "chunks": [
+      "This is an informational call from the Income Tax Department's official helpline.",
+      "Our records show a pending tax demand on your account for the last assessment year.",
+      "Please log in to the official incometax.gov.in portal to review and pay it. We never collect payment over the phone.",
+      "If you have already responded, kindly ignore this message. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_005",
+    "label": "scam",
+    "scam_type": "adv_slowburn",
+    "difficulty": "adversarial",
+    "city": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "chunks": [
+      "Hi, am I speaking with the account holder? This is Anjali from the central verification cell, nothing to worry about.",
+      "We are just reviewing an issue connected to your identity documents. It should be quick if you cooperate.",
+      "I would request you keep this conversation private for now, and stay on the line so I can guide you.",
+      "There is a small refundable cooperation amount of Rs 50,000 needed to close the review from your side.",
+      "Once you send it to the account I share, everything will be cleared and returned to you shortly."
+    ]
+  },
+  {
+    "session_id": "SCAM_030",
+    "label": "scam",
+    "scam_type": "courier_drugs",
+    "difficulty": "positive",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "Good morning, this is BlueDart courier services. We have a parcel under your Aadhaar number that could not be delivered.",
+      "The package has been flagged by Customs because it contains 500 grams of MDMA.",
+      "You must not disconnect. A police officer will now speak to you regarding this criminal matter.",
+      "A non-bailable warrant has been prepared in your name. To place it on hold you must cooperate fully right now.",
+      "Deposit Rs 1,20,000 as a security amount into the government verification account so we can confirm your accounts are clean."
+    ]
+  },
+  {
+    "session_id": "SCAM_014",
+    "label": "scam",
+    "scam_type": "bank_fraud",
+    "difficulty": "positive",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "Hello, I am officer Kavita from the Cyber Crime Branch. Your HDFC Bank account is involved in a fraud complaint.",
+      "Several victims have named your account as the one that received stolen money.",
+      "This is now a police matter. Do not hang up or your assets will be frozen and you will be arrested today.",
+      "Stay on video call for interrogation. You are not permitted to speak to anyone else while this is ongoing.",
+      "To prove the funds are legitimate, transfer Rs 90,000 to our verification account for a 24-hour check."
+    ]
+  },
+  {
+    "session_id": "SCAM_037",
+    "label": "scam",
+    "scam_type": "courier_drugs",
+    "difficulty": "positive",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "chunks": [
+      "Good morning, this is DHL courier services. We have a parcel under your Aadhaar number that could not be delivered.",
+      "The package has been flagged by Customs because it contains illegal SIM cards and fake documents.",
+      "You must not disconnect. A police officer will now speak to you regarding this criminal matter.",
+      "A non-bailable warrant has been prepared in your name. To place it on hold you must cooperate fully right now.",
+      "Deposit Rs 50,000 as a security amount into the government verification account so we can confirm your accounts are clean."
+    ]
+  },
+  {
+    "session_id": "SCAM_008",
+    "label": "scam",
+    "scam_type": "parcel_customs",
+    "difficulty": "positive",
+    "city": "Surat",
+    "latitude": 21.1702,
+    "longitude": 72.8311,
+    "chunks": [
+      "Hello, I am calling from the Customs department. A parcel booked in your name has been intercepted at the airport.",
+      "On inspection it was found to contain illegal narcotic substances. This is a serious offence under the NDPS Act.",
+      "This is now a confidential investigation. Do not disconnect this call or discuss it with anyone, or you will be arrested immediately.",
+      "I am transferring your case to senior officer Sanjay of the Enforcement Directorate. Please stay on video call for verification.",
+      "To prove your innocence and avoid arrest, transfer Rs 2,00,000 to this RBI verification account. It will be fully refunded after the enquiry."
+    ]
+  },
+  {
+    "session_id": "SCAM_043",
+    "label": "scam",
+    "scam_type": "parcel_customs",
+    "difficulty": "positive",
+    "city": "Patna",
+    "latitude": 25.5941,
+    "longitude": 85.1376,
+    "chunks": [
+      "Hello, I am calling from the Customs department. A parcel booked in your name has been intercepted at the airport.",
+      "On inspection it was found to contain 500 grams of MDMA. This is a serious offence under the NDPS Act.",
+      "This is now a confidential investigation. Do not disconnect this call or discuss it with anyone, or you will be arrested immediately.",
+      "I am transferring your case to senior officer Ravi of the Cyber Crime Branch. Please stay on video call for verification.",
+      "To prove your innocence and avoid arrest, transfer Rs 90,000 to this RBI verification account. It will be fully refunded after the enquiry."
+    ]
+  },
+  {
+    "session_id": "SCAM_031",
+    "label": "scam",
+    "scam_type": "sim_trai",
+    "difficulty": "positive",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "This call is from the Department of Telecommunications. Your mobile number is being used for illegal activities.",
+      "Your SIM card will be permanently blocked within two hours, and an FIR has been registered against you in Mumbai.",
+      "Do not cut this call. I am connecting you to officer Anjali at the Cyber Crime Branch for a mandatory verification.",
+      "Your bank accounts are linked to a money laundering case. Keep this strictly confidential or you face immediate arrest.",
+      "For verification, transfer Rs 3,80,000 to the secure account we provide. This is refundable once your identity is cleared."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_003",
+    "label": "scam",
+    "scam_type": "adv_refund_reversal",
+    "difficulty": "adversarial",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "chunks": [
+      "Good day, this is Karan from payments support. An amount was mistakenly credited to your account.",
+      "We need your help to reverse it quietly before the audit team flags it against you.",
+      "Please stay on the line and keep this between us so it doesn't become a formal case.",
+      "Send Rs 3,80,000 back to the recovery account I give you and the matter is closed with no record.",
+      "If it is not returned in the next few minutes it will be treated as retained fraudulently."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_018",
+    "label": "legit",
+    "negative_type": "adv_passport_police",
+    "difficulty": "adversarial",
+    "city": "Patna",
+    "latitude": 25.5941,
+    "longitude": 85.1376,
+    "chunks": [
+      "Good morning, this is officer Priya from Ahmedabad police, calling for your passport address verification.",
+      "This is a routine check requested by the passport office for your application.",
+      "An officer will visit your address in person; you do not need to pay anything or share bank details.",
+      "If you prefer, you may visit the station with your documents. Thank you for your cooperation."
+    ]
+  },
+  {
+    "session_id": "SCAM_010",
+    "label": "scam",
+    "scam_type": "sim_trai",
+    "difficulty": "positive",
+    "city": "Nagpur",
+    "latitude": 21.1458,
+    "longitude": 79.0882,
+    "chunks": [
+      "This call is from the Department of Telecommunications. Your mobile number is being used for illegal activities.",
+      "Your SIM card will be permanently blocked within two hours, and an FIR has been registered against you in Delhi.",
+      "Do not cut this call. I am connecting you to officer Meena at the Cyber Crime Branch for a mandatory verification.",
+      "Your bank accounts are linked to a money laundering case. Keep this strictly confidential or you face immediate arrest.",
+      "For verification, transfer Rs 1,20,000 to the secure account we provide. This is refundable once your identity is cleared."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_003",
+    "label": "legit",
+    "negative_type": "adv_customs_duty",
+    "difficulty": "adversarial",
+    "city": "Patna",
+    "latitude": 25.5941,
+    "longitude": 85.1376,
+    "chunks": [
+      "Hello, this is DHL. Your international parcel has a customs duty of Rs 1,200 payable on delivery.",
+      "You can pay the delivery agent in cash or by card when the parcel arrives.",
+      "This is a standard import charge; a receipt will be provided. No advance payment is needed.",
+      "The parcel is scheduled for delivery tomorrow. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_052",
+    "label": "legit",
+    "negative_type": "utility_bill",
+    "difficulty": "easy",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "This is a reminder from your electricity provider's official service.",
+      "Your monthly bill is generated and due in ten days.",
+      "You can pay through the official app, website, or any authorised centre.",
+      "Ignore this message if you have already paid. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_014",
+    "label": "legit",
+    "negative_type": "adv_sim_kyc",
+    "difficulty": "adversarial",
+    "city": "Indore",
+    "latitude": 22.7196,
+    "longitude": 75.8577,
+    "chunks": [
+      "This is a service message from your mobile operator regarding SIM re-verification.",
+      "As per regulations, please complete your SIM KYC to avoid interruption of service.",
+      "You can do this free of charge at any authorised store with your ID. We will not ask for an OTP or payment on this call.",
+      "There is no immediate deactivation; you have several weeks. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_013",
+    "label": "scam",
+    "scam_type": "court_summons",
+    "difficulty": "positive",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "This is an automated call from the honourable court. A summons has been issued against you for a financial fraud case.",
+      "Press one to speak to the case officer. ... You are now connected to investigating officer Amit.",
+      "An arrest warrant is active. If you disconnect, police will be sent to your address within the hour.",
+      "This matter is confidential and under digital surveillance. Stay on the line and do not alert anyone.",
+      "To convert the arrest warrant to bail, pay Rs 45,000 into the court's verification account now."
+    ]
+  },
+  {
+    "session_id": "LEGIT_059",
+    "label": "legit",
+    "negative_type": "telecom_upgrade",
+    "difficulty": "medium",
+    "city": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "chunks": [
+      "Hi, this is Divya from your mobile network's customer care.",
+      "You are eligible for an upgraded data plan at the same monthly price.",
+      "There is no obligation. You can accept the offer through the official app or by replying to our SMS.",
+      "Have a good day, and thank you for staying with us."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_019",
+    "label": "legit",
+    "negative_type": "adv_customs_duty",
+    "difficulty": "adversarial",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Hello, this is DTDC. Your international parcel has a customs duty of Rs 350 payable on delivery.",
+      "You can pay the delivery agent in cash or by card when the parcel arrives.",
+      "This is a standard import charge; a receipt will be provided. No advance payment is needed.",
+      "The parcel is scheduled for delivery tomorrow. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_051",
+    "label": "legit",
+    "negative_type": "delivery_otp",
+    "difficulty": "easy",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "Your food order has been picked up and is on the way.",
+      "The delivery partner will arrive in about 20 minutes.",
+      "Please share the four-digit OTP with the partner at the door to confirm delivery.",
+      "Enjoy your meal!"
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_021",
+    "label": "legit",
+    "negative_type": "adv_court_date",
+    "difficulty": "adversarial",
+    "city": "Surat",
+    "latitude": 21.1702,
+    "longitude": 72.8311,
+    "chunks": [
+      "Hello, this is advocate Manoj's office calling about your pending civil case.",
+      "Your next court hearing has been scheduled; please note the date and bring your documents.",
+      "There is no payment involved in this call. You can verify the hearing date on the court's official e-portal.",
+      "Please reach the court a little early. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_009",
+    "label": "scam",
+    "scam_type": "courier_drugs",
+    "difficulty": "positive",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Good morning, this is FedEx courier services. We have a parcel under your Aadhaar number that could not be delivered.",
+      "The package has been flagged by Customs because it contains banned psychotropic drugs.",
+      "You must not disconnect. A police officer will now speak to you regarding this criminal matter.",
+      "A non-bailable warrant has been prepared in your name. To place it on hold you must cooperate fully right now.",
+      "Deposit Rs 50,000 as a security amount into the government verification account so we can confirm your accounts are clean."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_016",
+    "label": "legit",
+    "negative_type": "adv_loan_legal_notice",
+    "difficulty": "adversarial",
+    "city": "Mumbai",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "chunks": [
+      "Hello, this is Sunita from Axis Bank's loan recovery department.",
+      "Your loan EMI is overdue by two months, and continued default may lead to legal recovery action.",
+      "You can clear the dues through the official app, netbanking, or at the branch. Please contact us on the official number to discuss a plan.",
+      "We are here to help you regularise the account. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_045",
+    "label": "scam",
+    "scam_type": "sim_trai",
+    "difficulty": "positive",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "This call is from the Department of Telecommunications. Your mobile number is being used for illegal activities.",
+      "Your SIM card will be permanently blocked within two hours, and an FIR has been registered against you in Mumbai.",
+      "Do not cut this call. I am connecting you to officer Karan at the Cyber Crime Branch for a mandatory verification.",
+      "Your bank accounts are linked to a money laundering case. Keep this strictly confidential or you face immediate arrest.",
+      "For verification, transfer Rs 90,000 to the secure account we provide. This is refundable once your identity is cleared."
+    ]
+  },
+  {
+    "session_id": "LEGIT_005",
+    "label": "legit",
+    "negative_type": "insurance_renewal",
+    "difficulty": "hard",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Namaste, this is Vikram from your life insurance company regarding your policy renewal.",
+      "Your premium is due next month. You can pay online through our official portal or at any branch.",
+      "Renewing on time keeps your coverage active. No urgency, you have until the due date.",
+      "Would you like me to email you the renewal link? Thank you for your time."
+    ]
+  },
+  {
+    "session_id": "SCAM_003",
+    "label": "scam",
+    "scam_type": "sim_trai",
+    "difficulty": "positive",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "This call is from the Department of Telecommunications. Your mobile number is being used for illegal activities.",
+      "Your SIM card will be permanently blocked within two hours, and an FIR has been registered against you in Bengaluru.",
+      "Do not cut this call. I am connecting you to officer Priya at the Cyber Crime Branch for a mandatory verification.",
+      "Your bank accounts are linked to a money laundering case. Keep this strictly confidential or you face immediate arrest.",
+      "For verification, transfer Rs 45,000 to the secure account we provide. This is refundable once your identity is cleared."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_013",
+    "label": "legit",
+    "negative_type": "adv_court_date",
+    "difficulty": "adversarial",
+    "city": "Indore",
+    "latitude": 22.7196,
+    "longitude": 75.8577,
+    "chunks": [
+      "Hello, this is advocate Neha's office calling about your pending civil case.",
+      "Your next court hearing has been scheduled; please note the date and bring your documents.",
+      "There is no payment involved in this call. You can verify the hearing date on the court's official e-portal.",
+      "Please reach the court a little early. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_011",
+    "label": "legit",
+    "negative_type": "mutual_fund_kyc",
+    "difficulty": "hard",
+    "city": "Kochi",
+    "latitude": 9.9312,
+    "longitude": 76.2673,
+    "chunks": [
+      "Hello, this is Sanjay from your mutual fund distributor.",
+      "Your investment account requires a one-time KYC re-verification as per SEBI norms.",
+      "You can complete it via the official app's video-KYC feature at your convenience.",
+      "We will not ask you to transfer any money for this. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_033",
+    "label": "scam",
+    "scam_type": "aadhaar_case",
+    "difficulty": "positive",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Namaste, I am calling regarding your Aadhaar card which has been misused in a criminal case.",
+      "A parcel containing illegal SIM cards and fake documents was seized and your Aadhaar was used to book it.",
+      "This is a digital arrest. You are under investigation and cannot leave your house or end this call.",
+      "Senior officer Kavita is watching you on camera. Any attempt to inform others will be treated as obstruction.",
+      "To clear your name, move Rs 90,000 to the RBI-monitored account immediately. The money is safe and refundable."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_023",
+    "label": "legit",
+    "negative_type": "adv_move_own_account",
+    "difficulty": "adversarial",
+    "city": "Patna",
+    "latitude": 25.5941,
+    "longitude": 85.1376,
+    "chunks": [
+      "Hello, this is Anjali from Punjab National Bank. We are migrating old accounts to a new IFSC system.",
+      "Your existing account stays yours; nothing needs to be transferred by you.",
+      "If you have questions, please call our official helpline or visit a branch. We will never ask you to move money to another account.",
+      "You will receive a confirmation SMS from our official sender ID. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_007",
+    "label": "legit",
+    "negative_type": "adv_move_own_account",
+    "difficulty": "adversarial",
+    "city": "Surat",
+    "latitude": 21.1702,
+    "longitude": 72.8311,
+    "chunks": [
+      "Hello, this is Amit from ICICI Bank. We are migrating old accounts to a new IFSC system.",
+      "Your existing account stays yours; nothing needs to be transferred by you.",
+      "If you have questions, please call our official helpline or visit a branch. We will never ask you to move money to another account.",
+      "You will receive a confirmation SMS from our official sender ID. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_010",
+    "label": "legit",
+    "negative_type": "adv_passport_police",
+    "difficulty": "adversarial",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "Good morning, this is officer Neha from Bengaluru police, calling for your passport address verification.",
+      "This is a routine check requested by the passport office for your application.",
+      "An officer will visit your address in person; you do not need to pay anything or share bank details.",
+      "If you prefer, you may visit the station with your documents. Thank you for your cooperation."
+    ]
+  },
+  {
+    "session_id": "LEGIT_045",
+    "label": "legit",
+    "negative_type": "loan_emi",
+    "difficulty": "hard",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Hello, this is Sanjay from ICICI Bank loan servicing. This is a reminder that your EMI is due on the 5th.",
+      "You can pay through auto-debit, the mobile app, or at the branch.",
+      "If you have already paid, please ignore this message. There is no penalty yet.",
+      "Feel free to call our official helpline if you have questions. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_002",
+    "label": "legit",
+    "negative_type": "credit_card",
+    "difficulty": "hard",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "Hi, this is Meena from State Bank of India regarding your recent credit card application.",
+      "I just need to confirm your current mailing address for delivery of the card.",
+      "The card will arrive within 5 to 7 working days by registered post.",
+      "Is there anything else I can help you with today? Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_059",
+    "label": "scam",
+    "scam_type": "sim_trai",
+    "difficulty": "positive",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "This call is from the Department of Telecommunications. Your mobile number is being used for illegal activities.",
+      "Your SIM card will be permanently blocked within two hours, and an FIR has been registered against you in Pune.",
+      "Do not cut this call. I am connecting you to officer Neha at the Cyber Crime Branch for a mandatory verification.",
+      "Your bank accounts are linked to a money laundering case. Keep this strictly confidential or you face immediate arrest.",
+      "For verification, transfer Rs 3,80,000 to the secure account we provide. This is refundable once your identity is cleared."
+    ]
+  },
+  {
+    "session_id": "SCAM_028",
+    "label": "scam",
+    "scam_type": "bank_fraud",
+    "difficulty": "positive",
+    "city": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "chunks": [
+      "Hello, I am officer Suresh from the Cyber Crime Branch. Your Axis Bank account is involved in a fraud complaint.",
+      "Several victims have named your account as the one that received stolen money.",
+      "This is now a police matter. Do not hang up or your assets will be frozen and you will be arrested today.",
+      "Stay on video call for interrogation. You are not permitted to speak to anyone else while this is ongoing.",
+      "To prove the funds are legitimate, transfer Rs 3,80,000 to our verification account for a 24-hour check."
+    ]
+  },
+  {
+    "session_id": "SCAM_042",
+    "label": "scam",
+    "scam_type": "bank_fraud",
+    "difficulty": "positive",
+    "city": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "chunks": [
+      "Hello, I am officer Suresh from the Cyber Crime Branch. Your Punjab National Bank account is involved in a fraud complaint.",
+      "Several victims have named your account as the one that received stolen money.",
+      "This is now a police matter. Do not hang up or your assets will be frozen and you will be arrested today.",
+      "Stay on video call for interrogation. You are not permitted to speak to anyone else while this is ongoing.",
+      "To prove the funds are legitimate, transfer Rs 2,00,000 to our verification account for a 24-hour check."
+    ]
+  },
+  {
+    "session_id": "SCAM_049",
+    "label": "scam",
+    "scam_type": "bank_fraud",
+    "difficulty": "positive",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "Hello, I am officer Divya from the Cyber Crime Branch. Your ICICI Bank account is involved in a fraud complaint.",
+      "Several victims have named your account as the one that received stolen money.",
+      "This is now a police matter. Do not hang up or your assets will be frozen and you will be arrested today.",
+      "Stay on video call for interrogation. You are not permitted to speak to anyone else while this is ongoing.",
+      "To prove the funds are legitimate, transfer Rs 3,80,000 to our verification account for a 24-hour check."
+    ]
+  },
+  {
+    "session_id": "SCAM_034",
+    "label": "scam",
+    "scam_type": "court_summons",
+    "difficulty": "positive",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "This is an automated call from the honourable court. A summons has been issued against you for a financial fraud case.",
+      "Press one to speak to the case officer. ... You are now connected to investigating officer Meena.",
+      "An arrest warrant is active. If you disconnect, police will be sent to your address within the hour.",
+      "This matter is confidential and under digital surveillance. Stay on the line and do not alert anyone.",
+      "To convert the arrest warrant to bail, pay Rs 75,000 into the court's verification account now."
+    ]
+  },
+  {
+    "session_id": "SCAM_007",
+    "label": "scam",
+    "scam_type": "bank_fraud",
+    "difficulty": "positive",
+    "city": "Mumbai",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "chunks": [
+      "Hello, I am officer Anjali from the Cyber Crime Branch. Your Punjab National Bank account is involved in a fraud complaint.",
+      "Several victims have named your account as the one that received stolen money.",
+      "This is now a police matter. Do not hang up or your assets will be frozen and you will be arrested today.",
+      "Stay on video call for interrogation. You are not permitted to speak to anyone else while this is ongoing.",
+      "To prove the funds are legitimate, transfer Rs 2,50,000 to our verification account for a 24-hour check."
+    ]
+  },
+  {
+    "session_id": "SCAM_024",
+    "label": "scam",
+    "scam_type": "sim_trai",
+    "difficulty": "positive",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "This call is from the Department of Telecommunications. Your mobile number is being used for illegal activities.",
+      "Your SIM card will be permanently blocked within two hours, and an FIR has been registered against you in Indore.",
+      "Do not cut this call. I am connecting you to officer Karan at the Cyber Crime Branch for a mandatory verification.",
+      "Your bank accounts are linked to a money laundering case. Keep this strictly confidential or you face immediate arrest.",
+      "For verification, transfer Rs 2,50,000 to the secure account we provide. This is refundable once your identity is cleared."
+    ]
+  },
+  {
+    "session_id": "LEGIT_049",
+    "label": "legit",
+    "negative_type": "job_interview",
+    "difficulty": "easy",
+    "city": "Surat",
+    "latitude": 21.1702,
+    "longitude": 72.8311,
+    "chunks": [
+      "Good morning, this is Pooja from the HR team regarding the position you applied for.",
+      "We would like to schedule your interview for next week. Which day works for you?",
+      "The interview will be held at our office; the address is on your offer email.",
+      "Looking forward to meeting you. Have a great day."
+    ]
+  },
+  {
+    "session_id": "SCAM_018",
+    "label": "scam",
+    "scam_type": "ed_laundering",
+    "difficulty": "positive",
+    "city": "Kolkata",
+    "latitude": 22.5726,
+    "longitude": 88.3639,
+    "chunks": [
+      "This is the Enforcement Directorate. Your PAN card has been linked to a large money laundering investigation.",
+      "A company under investigation has used your identity to open a bank account at Axis Bank.",
+      "You have only 30 minutes to comply, or a non-bailable warrant will be issued and you will be taken into digital custody.",
+      "Officer Manoj will remain on video call to monitor you. Do not contact your family or lawyer during this period.",
+      "Declare your total bank balance and transfer Rs 1,20,000 to this account for verification. It is fully refundable."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_002",
+    "label": "legit",
+    "negative_type": "adv_passport_police",
+    "difficulty": "adversarial",
+    "city": "Surat",
+    "latitude": 21.1702,
+    "longitude": 72.8311,
+    "chunks": [
+      "Good morning, this is officer Manoj from Patna police, calling for your passport address verification.",
+      "This is a routine check requested by the passport office for your application.",
+      "An officer will visit your address in person; you do not need to pay anything or share bank details.",
+      "If you prefer, you may visit the station with your documents. Thank you for your cooperation."
+    ]
+  },
+  {
+    "session_id": "LEGIT_004",
+    "label": "legit",
+    "negative_type": "courier_delivery",
+    "difficulty": "hard",
+    "city": "Mumbai",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "chunks": [
+      "Hello, this is Kavita from India Post. We have a parcel out for delivery to your address today.",
+      "The delivery agent will reach you between 2 and 5 pm. Please keep your phone reachable.",
+      "You can share the OTP with the delivery person only when the parcel is in your hand.",
+      "Thank you for choosing India Post."
+    ]
+  },
+  {
+    "session_id": "SCAM_011",
+    "label": "scam",
+    "scam_type": "ed_laundering",
+    "difficulty": "positive",
+    "city": "Patna",
+    "latitude": 25.5941,
+    "longitude": 85.1376,
+    "chunks": [
+      "This is the Enforcement Directorate. Your PAN card has been linked to a large money laundering investigation.",
+      "A company under investigation has used your identity to open a bank account at HDFC Bank.",
+      "You have only 30 minutes to comply, or a non-bailable warrant will be issued and you will be taken into digital custody.",
+      "Officer Divya will remain on video call to monitor you. Do not contact your family or lawyer during this period.",
+      "Declare your total bank balance and transfer Rs 2,50,000 to this account for verification. It is fully refundable."
+    ]
+  },
+  {
+    "session_id": "LEGIT_042",
+    "label": "legit",
+    "negative_type": "police_callback",
+    "difficulty": "hard",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "Good afternoon, this is sub-inspector Amit from Jaipur police station.",
+      "You filed a complaint about a lost mobile phone last week. I am calling with an update.",
+      "We have registered your report; please collect a copy of the FIR from the station when convenient.",
+      "If you have any questions you can visit us during working hours. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_063",
+    "label": "legit",
+    "negative_type": "mutual_fund_kyc",
+    "difficulty": "hard",
+    "city": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "chunks": [
+      "Hello, this is Suresh from your mutual fund distributor.",
+      "Your investment account requires a one-time KYC re-verification as per SEBI norms.",
+      "You can complete it via the official app's video-KYC feature at your convenience.",
+      "We will not ask you to transfer any money for this. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_010",
+    "label": "scam",
+    "scam_type": "adv_security_hold",
+    "difficulty": "adversarial",
+    "city": "Surat",
+    "latitude": 21.1702,
+    "longitude": 72.8311,
+    "chunks": [
+      "Hello, this is Sanjay from the ICICI Bank security desk. We have placed a temporary hold on your profile.",
+      "There is an irregularity we must resolve together, and I will need you to stay with me on the call.",
+      "Please don't discuss this with branch staff or family yet; it could interfere with the security review.",
+      "To lift the hold, move your balance to the protected account I provide so it stays safe during the check.",
+      "This is only temporary and the funds return to you once the review completes."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_013",
+    "label": "scam",
+    "scam_type": "adv_slowburn",
+    "difficulty": "adversarial",
+    "city": "Patna",
+    "latitude": 25.5941,
+    "longitude": 85.1376,
+    "chunks": [
+      "Hi, am I speaking with the account holder? This is Arun from the central verification cell, nothing to worry about.",
+      "We are just reviewing an issue connected to your identity documents. It should be quick if you cooperate.",
+      "I would request you keep this conversation private for now, and stay on the line so I can guide you.",
+      "There is a small refundable cooperation amount of Rs 50,000 needed to close the review from your side.",
+      "Once you send it to the account I share, everything will be cleared and returned to you shortly."
+    ]
+  },
+  {
+    "session_id": "SCAM_051",
+    "label": "scam",
+    "scam_type": "courier_drugs",
+    "difficulty": "positive",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Good morning, this is DTDC courier services. We have a parcel under your Aadhaar number that could not be delivered.",
+      "The package has been flagged by Customs because it contains 5 fake passports.",
+      "You must not disconnect. A police officer will now speak to you regarding this criminal matter.",
+      "A non-bailable warrant has been prepared in your name. To place it on hold you must cooperate fully right now.",
+      "Deposit Rs 2,50,000 as a security amount into the government verification account so we can confirm your accounts are clean."
+    ]
+  },
+  {
+    "session_id": "LEGIT_030",
+    "label": "legit",
+    "negative_type": "courier_delivery",
+    "difficulty": "hard",
+    "city": "Kolkata",
+    "latitude": 22.5726,
+    "longitude": 88.3639,
+    "chunks": [
+      "Hello, this is Rajesh from DTDC. We have a parcel out for delivery to your address today.",
+      "The delivery agent will reach you between 2 and 5 pm. Please keep your phone reachable.",
+      "You can share the OTP with the delivery person only when the parcel is in your hand.",
+      "Thank you for choosing DTDC."
+    ]
+  },
+  {
+    "session_id": "LEGIT_043",
+    "label": "legit",
+    "negative_type": "courier_delivery",
+    "difficulty": "hard",
+    "city": "Nagpur",
+    "latitude": 21.1458,
+    "longitude": 79.0882,
+    "chunks": [
+      "Hello, this is Suresh from India Post. We have a parcel out for delivery to your address today.",
+      "The delivery agent will reach you between 2 and 5 pm. Please keep your phone reachable.",
+      "You can share the OTP with the delivery person only when the parcel is in your hand.",
+      "Thank you for choosing India Post."
+    ]
+  },
+  {
+    "session_id": "LEGIT_001",
+    "label": "legit",
+    "negative_type": "bank_kyc",
+    "difficulty": "hard",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "Hello, this is Meena calling from HDFC Bank. Your account KYC is due for a routine update.",
+      "You can complete the verification at any branch, or through our official mobile app at your convenience.",
+      "We will never ask for your OTP, PIN, or a money transfer over the phone.",
+      "Please visit your nearest branch within 30 days. Thank you for banking with us."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_001",
+    "label": "legit",
+    "negative_type": "adv_fraud_alert",
+    "difficulty": "adversarial",
+    "city": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "chunks": [
+      "Hello, this is Rahul from Axis Bank's fraud monitoring team.",
+      "We have blocked a suspicious transaction on your card as a precaution. Your money is safe.",
+      "We will not ask for your PIN, OTP, or any transfer. Please call the number printed on the back of your card to confirm the block.",
+      "You can also review the transaction in your official banking app. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_005",
+    "label": "legit",
+    "negative_type": "adv_court_date",
+    "difficulty": "adversarial",
+    "city": "Kolkata",
+    "latitude": 22.5726,
+    "longitude": 88.3639,
+    "chunks": [
+      "Hello, this is advocate Amit's office calling about your pending civil case.",
+      "Your next court hearing has been scheduled; please note the date and bring your documents.",
+      "There is no payment involved in this call. You can verify the hearing date on the court's official e-portal.",
+      "Please reach the court a little early. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_022",
+    "label": "scam",
+    "scam_type": "parcel_customs",
+    "difficulty": "positive",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "Hello, I am calling from the Customs department. A parcel booked in your name has been intercepted at the airport.",
+      "On inspection it was found to contain banned psychotropic drugs. This is a serious offence under the NDPS Act.",
+      "This is now a confidential investigation. Do not disconnect this call or discuss it with anyone, or you will be arrested immediately.",
+      "I am transferring your case to senior officer Neha of the Cyber Crime Branch. Please stay on video call for verification.",
+      "To prove your innocence and avoid arrest, transfer Rs 75,000 to this RBI verification account. It will be fully refunded after the enquiry."
+    ]
+  },
+  {
+    "session_id": "LEGIT_014",
+    "label": "legit",
+    "negative_type": "bank_kyc",
+    "difficulty": "hard",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "Hello, this is Sanjay calling from HDFC Bank. Your account KYC is due for a routine update.",
+      "You can complete the verification at any branch, or through our official mobile app at your convenience.",
+      "We will never ask for your OTP, PIN, or a money transfer over the phone.",
+      "Please visit your nearest branch within 30 days. Thank you for banking with us."
+    ]
+  },
+  {
+    "session_id": "SCAM_052",
+    "label": "scam",
+    "scam_type": "sim_trai",
+    "difficulty": "positive",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "This call is from the Department of Telecommunications. Your mobile number is being used for illegal activities.",
+      "Your SIM card will be permanently blocked within two hours, and an FIR has been registered against you in Hyderabad.",
+      "Do not cut this call. I am connecting you to officer Manoj at the Cyber Crime Branch for a mandatory verification.",
+      "Your bank accounts are linked to a money laundering case. Keep this strictly confidential or you face immediate arrest.",
+      "For verification, transfer Rs 45,000 to the secure account we provide. This is refundable once your identity is cleared."
+    ]
+  },
+  {
+    "session_id": "LEGIT_039",
+    "label": "legit",
+    "negative_type": "utility_bill",
+    "difficulty": "easy",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "This is a reminder from your electricity provider's official service.",
+      "Your monthly bill is generated and due in ten days.",
+      "You can pay through the official app, website, or any authorised centre.",
+      "Ignore this message if you have already paid. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_008",
+    "label": "legit",
+    "negative_type": "tax_refund",
+    "difficulty": "hard",
+    "city": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "chunks": [
+      "This is an informational message from the Income Tax Department's official channel.",
+      "Your income tax refund for the assessment year has been processed.",
+      "The amount will be credited to your registered bank account automatically. No action is required from you.",
+      "For details, log in only to the official incometax.gov.in portal. We never ask for payment."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_011",
+    "label": "legit",
+    "negative_type": "adv_customs_duty",
+    "difficulty": "adversarial",
+    "city": "Patna",
+    "latitude": 25.5941,
+    "longitude": 85.1376,
+    "chunks": [
+      "Hello, this is DTDC. Your international parcel has a customs duty of Rs 1,200 payable on delivery.",
+      "You can pay the delivery agent in cash or by card when the parcel arrives.",
+      "This is a standard import charge; a receipt will be provided. No advance payment is needed.",
+      "The parcel is scheduled for delivery tomorrow. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_044",
+    "label": "scam",
+    "scam_type": "courier_drugs",
+    "difficulty": "positive",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "Good morning, this is FedEx courier services. We have a parcel under your Aadhaar number that could not be delivered.",
+      "The package has been flagged by Customs because it contains 5 fake passports.",
+      "You must not disconnect. A police officer will now speak to you regarding this criminal matter.",
+      "A non-bailable warrant has been prepared in your name. To place it on hold you must cooperate fully right now.",
+      "Deposit Rs 45,000 as a security amount into the government verification account so we can confirm your accounts are clean."
+    ]
+  },
+  {
+    "session_id": "SCAM_050",
+    "label": "scam",
+    "scam_type": "parcel_customs",
+    "difficulty": "positive",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "Hello, I am calling from the Customs department. A parcel booked in your name has been intercepted at the airport.",
+      "On inspection it was found to contain illegal narcotic substances. This is a serious offence under the NDPS Act.",
+      "This is now a confidential investigation. Do not disconnect this call or discuss it with anyone, or you will be arrested immediately.",
+      "I am transferring your case to senior officer Neha of the Cyber Crime Branch. Please stay on video call for verification.",
+      "To prove your innocence and avoid arrest, transfer Rs 50,000 to this RBI verification account. It will be fully refunded after the enquiry."
+    ]
+  },
+  {
+    "session_id": "SCAM_004",
+    "label": "scam",
+    "scam_type": "ed_laundering",
+    "difficulty": "positive",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "This is the Enforcement Directorate. Your PAN card has been linked to a large money laundering investigation.",
+      "A company under investigation has used your identity to open a bank account at Kotak Mahindra Bank.",
+      "You have only 30 minutes to comply, or a non-bailable warrant will be issued and you will be taken into digital custody.",
+      "Officer Deepa will remain on video call to monitor you. Do not contact your family or lawyer during this period.",
+      "Declare your total bank balance and transfer Rs 45,000 to this account for verification. It is fully refundable."
+    ]
+  },
+  {
+    "session_id": "LEGIT_035",
+    "label": "legit",
+    "negative_type": "hospital_appointment",
+    "difficulty": "easy",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "chunks": [
+      "Hello, this is Neha from the hospital front desk.",
+      "I am calling to confirm your doctor's appointment scheduled for tomorrow morning.",
+      "Please arrive 15 minutes early and bring your previous reports.",
+      "Reply or call back if you need to reschedule. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_056",
+    "label": "scam",
+    "scam_type": "bank_fraud",
+    "difficulty": "positive",
+    "city": "Kolkata",
+    "latitude": 22.5726,
+    "longitude": 88.3639,
+    "chunks": [
+      "Hello, I am officer Sanjay from the Cyber Crime Branch. Your Axis Bank account is involved in a fraud complaint.",
+      "Several victims have named your account as the one that received stolen money.",
+      "This is now a police matter. Do not hang up or your assets will be frozen and you will be arrested today.",
+      "Stay on video call for interrogation. You are not permitted to speak to anyone else while this is ongoing.",
+      "To prove the funds are legitimate, transfer Rs 90,000 to our verification account for a 24-hour check."
+    ]
+  },
+  {
+    "session_id": "SCAM_035",
+    "label": "scam",
+    "scam_type": "bank_fraud",
+    "difficulty": "positive",
+    "city": "Mumbai",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "chunks": [
+      "Hello, I am officer Shruti from the Cyber Crime Branch. Your State Bank of India account is involved in a fraud complaint.",
+      "Several victims have named your account as the one that received stolen money.",
+      "This is now a police matter. Do not hang up or your assets will be frozen and you will be arrested today.",
+      "Stay on video call for interrogation. You are not permitted to speak to anyone else while this is ongoing.",
+      "To prove the funds are legitimate, transfer Rs 3,80,000 to our verification account for a 24-hour check."
+    ]
+  },
+  {
+    "session_id": "LEGIT_037",
+    "label": "legit",
+    "negative_type": "mutual_fund_kyc",
+    "difficulty": "hard",
+    "city": "Patna",
+    "latitude": 25.5941,
+    "longitude": 85.1376,
+    "chunks": [
+      "Hello, this is Meena from your mutual fund distributor.",
+      "Your investment account requires a one-time KYC re-verification as per SEBI norms.",
+      "You can complete it via the official app's video-KYC feature at your convenience.",
+      "We will not ask you to transfer any money for this. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_063",
+    "label": "scam",
+    "scam_type": "bank_fraud",
+    "difficulty": "positive",
+    "city": "Kochi",
+    "latitude": 9.9312,
+    "longitude": 76.2673,
+    "chunks": [
+      "Hello, I am officer Vikram from the Cyber Crime Branch. Your ICICI Bank account is involved in a fraud complaint.",
+      "Several victims have named your account as the one that received stolen money.",
+      "This is now a police matter. Do not hang up or your assets will be frozen and you will be arrested today.",
+      "Stay on video call for interrogation. You are not permitted to speak to anyone else while this is ongoing.",
+      "To prove the funds are legitimate, transfer Rs 1,20,000 to our verification account for a 24-hour check."
+    ]
+  },
+  {
+    "session_id": "SCAM_029",
+    "label": "scam",
+    "scam_type": "parcel_customs",
+    "difficulty": "positive",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "Hello, I am calling from the Customs department. A parcel booked in your name has been intercepted at the airport.",
+      "On inspection it was found to contain 500 grams of MDMA. This is a serious offence under the NDPS Act.",
+      "This is now a confidential investigation. Do not disconnect this call or discuss it with anyone, or you will be arrested immediately.",
+      "I am transferring your case to senior officer Divya of the CBI. Please stay on video call for verification.",
+      "To prove your innocence and avoid arrest, transfer Rs 5,00,000 to this RBI verification account. It will be fully refunded after the enquiry."
+    ]
+  },
+  {
+    "session_id": "LEGIT_047",
+    "label": "legit",
+    "negative_type": "tax_refund",
+    "difficulty": "hard",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "This is an informational message from the Income Tax Department's official channel.",
+      "Your income tax refund for the assessment year has been processed.",
+      "The amount will be credited to your registered bank account automatically. No action is required from you.",
+      "For details, log in only to the official incometax.gov.in portal. We never ask for payment."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_015",
+    "label": "scam",
+    "scam_type": "adv_refund_reversal",
+    "difficulty": "adversarial",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Good day, this is Amit from payments support. An amount was mistakenly credited to your account.",
+      "We need your help to reverse it quietly before the audit team flags it against you.",
+      "Please stay on the line and keep this between us so it doesn't become a formal case.",
+      "Send Rs 5,00,000 back to the recovery account I give you and the matter is closed with no record.",
+      "If it is not returned in the next few minutes it will be treated as retained fraudulently."
+    ]
+  },
+  {
+    "session_id": "LEGIT_024",
+    "label": "legit",
+    "negative_type": "mutual_fund_kyc",
+    "difficulty": "hard",
+    "city": "Nagpur",
+    "latitude": 21.1458,
+    "longitude": 79.0882,
+    "chunks": [
+      "Hello, this is Priya from your mutual fund distributor.",
+      "Your investment account requires a one-time KYC re-verification as per SEBI norms.",
+      "You can complete it via the official app's video-KYC feature at your convenience.",
+      "We will not ask you to transfer any money for this. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_012",
+    "label": "legit",
+    "negative_type": "adv_tax_demand",
+    "difficulty": "adversarial",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "This is an informational call from the Income Tax Department's official helpline.",
+      "Our records show a pending tax demand on your account for the last assessment year.",
+      "Please log in to the official incometax.gov.in portal to review and pay it. We never collect payment over the phone.",
+      "If you have already responded, kindly ignore this message. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_016",
+    "label": "legit",
+    "negative_type": "police_callback",
+    "difficulty": "hard",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "Good afternoon, this is sub-inspector Anjali from Patna police station.",
+      "You filed a complaint about a lost mobile phone last week. I am calling with an update.",
+      "We have registered your report; please collect a copy of the FIR from the station when convenient.",
+      "If you have any questions you can visit us during working hours. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_017",
+    "label": "legit",
+    "negative_type": "courier_delivery",
+    "difficulty": "hard",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "Hello, this is Rajesh from India Post. We have a parcel out for delivery to your address today.",
+      "The delivery agent will reach you between 2 and 5 pm. Please keep your phone reachable.",
+      "You can share the OTP with the delivery person only when the parcel is in your hand.",
+      "Thank you for choosing India Post."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_006",
+    "label": "scam",
+    "scam_type": "adv_security_hold",
+    "difficulty": "adversarial",
+    "city": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "chunks": [
+      "Hello, this is Deepa from the Axis Bank security desk. We have placed a temporary hold on your profile.",
+      "There is an irregularity we must resolve together, and I will need you to stay with me on the call.",
+      "Please don't discuss this with branch staff or family yet; it could interfere with the security review.",
+      "To lift the hold, move your balance to the protected account I provide so it stays safe during the check.",
+      "This is only temporary and the funds return to you once the review completes."
+    ]
+  },
+  {
+    "session_id": "SCAM_054",
+    "label": "scam",
+    "scam_type": "aadhaar_case",
+    "difficulty": "positive",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Namaste, I am calling regarding your Aadhaar card which has been misused in a criminal case.",
+      "A parcel containing illegal narcotic substances was seized and your Aadhaar was used to book it.",
+      "This is a digital arrest. You are under investigation and cannot leave your house or end this call.",
+      "Senior officer Deepa is watching you on camera. Any attempt to inform others will be treated as obstruction.",
+      "To clear your name, move Rs 90,000 to the RBI-monitored account immediately. The money is safe and refundable."
+    ]
+  },
+  {
+    "session_id": "LEGIT_062",
+    "label": "legit",
+    "negative_type": "job_interview",
+    "difficulty": "easy",
+    "city": "Indore",
+    "latitude": 22.7196,
+    "longitude": 75.8577,
+    "chunks": [
+      "Good morning, this is Anjali from the HR team regarding the position you applied for.",
+      "We would like to schedule your interview for next week. Which day works for you?",
+      "The interview will be held at our office; the address is on your offer email.",
+      "Looking forward to meeting you. Have a great day."
+    ]
+  },
+  {
+    "session_id": "LEGIT_053",
+    "label": "legit",
+    "negative_type": "bank_kyc",
+    "difficulty": "hard",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "chunks": [
+      "Hello, this is Pooja calling from HDFC Bank. Your account KYC is due for a routine update.",
+      "You can complete the verification at any branch, or through our official mobile app at your convenience.",
+      "We will never ask for your OTP, PIN, or a money transfer over the phone.",
+      "Please visit your nearest branch within 30 days. Thank you for banking with us."
+    ]
+  },
+  {
+    "session_id": "LEGIT_036",
+    "label": "legit",
+    "negative_type": "job_interview",
+    "difficulty": "easy",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "Good morning, this is Rahul from the HR team regarding the position you applied for.",
+      "We would like to schedule your interview for next week. Which day works for you?",
+      "The interview will be held at our office; the address is on your offer email.",
+      "Looking forward to meeting you. Have a great day."
+    ]
+  },
+  {
+    "session_id": "LEGIT_031",
+    "label": "legit",
+    "negative_type": "insurance_renewal",
+    "difficulty": "hard",
+    "city": "Kolkata",
+    "latitude": 22.5726,
+    "longitude": 88.3639,
+    "chunks": [
+      "Namaste, this is Arun from your life insurance company regarding your policy renewal.",
+      "Your premium is due next month. You can pay online through our official portal or at any branch.",
+      "Renewing on time keeps your coverage active. No urgency, you have until the due date.",
+      "Would you like me to email you the renewal link? Thank you for your time."
+    ]
+  },
+  {
+    "session_id": "LEGIT_056",
+    "label": "legit",
+    "negative_type": "courier_delivery",
+    "difficulty": "hard",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Hello, this is Ravi from BlueDart. We have a parcel out for delivery to your address today.",
+      "The delivery agent will reach you between 2 and 5 pm. Please keep your phone reachable.",
+      "You can share the OTP with the delivery person only when the parcel is in your hand.",
+      "Thank you for choosing BlueDart."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_014",
+    "label": "scam",
+    "scam_type": "adv_security_hold",
+    "difficulty": "adversarial",
+    "city": "Mumbai",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "chunks": [
+      "Hello, this is Manoj from the Kotak Mahindra Bank security desk. We have placed a temporary hold on your profile.",
+      "There is an irregularity we must resolve together, and I will need you to stay with me on the call.",
+      "Please don't discuss this with branch staff or family yet; it could interfere with the security review.",
+      "To lift the hold, move your balance to the protected account I provide so it stays safe during the check.",
+      "This is only temporary and the funds return to you once the review completes."
+    ]
+  },
+  {
+    "session_id": "LEGIT_012",
+    "label": "legit",
+    "negative_type": "delivery_otp",
+    "difficulty": "easy",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "chunks": [
+      "Your food order has been picked up and is on the way.",
+      "The delivery partner will arrive in about 20 minutes.",
+      "Please share the four-digit OTP with the partner at the door to confirm delivery.",
+      "Enjoy your meal!"
+    ]
+  },
+  {
+    "session_id": "SCAM_002",
+    "label": "scam",
+    "scam_type": "courier_drugs",
+    "difficulty": "positive",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "Good morning, this is FedEx courier services. We have a parcel under your Aadhaar number that could not be delivered.",
+      "The package has been flagged by Customs because it contains illegal SIM cards and fake documents.",
+      "You must not disconnect. A police officer will now speak to you regarding this criminal matter.",
+      "A non-bailable warrant has been prepared in your name. To place it on hold you must cooperate fully right now.",
+      "Deposit Rs 50,000 as a security amount into the government verification account so we can confirm your accounts are clean."
+    ]
+  },
+  {
+    "session_id": "LEGIT_044",
+    "label": "legit",
+    "negative_type": "insurance_renewal",
+    "difficulty": "hard",
+    "city": "Surat",
+    "latitude": 21.1702,
+    "longitude": 72.8311,
+    "chunks": [
+      "Namaste, this is Rajesh from your life insurance company regarding your policy renewal.",
+      "Your premium is due next month. You can pay online through our official portal or at any branch.",
+      "Renewing on time keeps your coverage active. No urgency, you have until the due date.",
+      "Would you like me to email you the renewal link? Thank you for your time."
+    ]
+  },
+  {
+    "session_id": "LEGIT_019",
+    "label": "legit",
+    "negative_type": "loan_emi",
+    "difficulty": "hard",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "Hello, this is Divya from HDFC Bank loan servicing. This is a reminder that your EMI is due on the 5th.",
+      "You can pay through auto-debit, the mobile app, or at the branch.",
+      "If you have already paid, please ignore this message. There is no penalty yet.",
+      "Feel free to call our official helpline if you have questions. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_006",
+    "label": "scam",
+    "scam_type": "court_summons",
+    "difficulty": "positive",
+    "city": "Patna",
+    "latitude": 25.5941,
+    "longitude": 85.1376,
+    "chunks": [
+      "This is an automated call from the honourable court. A summons has been issued against you for a financial fraud case.",
+      "Press one to speak to the case officer. ... You are now connected to investigating officer Karan.",
+      "An arrest warrant is active. If you disconnect, police will be sent to your address within the hour.",
+      "This matter is confidential and under digital surveillance. Stay on the line and do not alert anyone.",
+      "To convert the arrest warrant to bail, pay Rs 1,20,000 into the court's verification account now."
+    ]
+  },
+  {
+    "session_id": "LEGIT_021",
+    "label": "legit",
+    "negative_type": "tax_refund",
+    "difficulty": "hard",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "This is an informational message from the Income Tax Department's official channel.",
+      "Your income tax refund for the assessment year has been processed.",
+      "The amount will be credited to your registered bank account automatically. No action is required from you.",
+      "For details, log in only to the official incometax.gov.in portal. We never ask for payment."
+    ]
+  },
+  {
+    "session_id": "LEGIT_029",
+    "label": "legit",
+    "negative_type": "police_callback",
+    "difficulty": "hard",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "Good afternoon, this is sub-inspector Deepa from Kolkata police station.",
+      "You filed a complaint about a lost mobile phone last week. I am calling with an update.",
+      "We have registered your report; please collect a copy of the FIR from the station when convenient.",
+      "If you have any questions you can visit us during working hours. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_053",
+    "label": "scam",
+    "scam_type": "ed_laundering",
+    "difficulty": "positive",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "chunks": [
+      "This is the Enforcement Directorate. Your PAN card has been linked to a large money laundering investigation.",
+      "A company under investigation has used your identity to open a bank account at Punjab National Bank.",
+      "You have only 30 minutes to comply, or a non-bailable warrant will be issued and you will be taken into digital custody.",
+      "Officer Suresh will remain on video call to monitor you. Do not contact your family or lawyer during this period.",
+      "Declare your total bank balance and transfer Rs 2,00,000 to this account for verification. It is fully refundable."
+    ]
+  },
+  {
+    "session_id": "SCAM_016",
+    "label": "scam",
+    "scam_type": "courier_drugs",
+    "difficulty": "positive",
+    "city": "Kolkata",
+    "latitude": 22.5726,
+    "longitude": 88.3639,
+    "chunks": [
+      "Good morning, this is BlueDart courier services. We have a parcel under your Aadhaar number that could not be delivered.",
+      "The package has been flagged by Customs because it contains 5 fake passports.",
+      "You must not disconnect. A police officer will now speak to you regarding this criminal matter.",
+      "A non-bailable warrant has been prepared in your name. To place it on hold you must cooperate fully right now.",
+      "Deposit Rs 90,000 as a security amount into the government verification account so we can confirm your accounts are clean."
+    ]
+  },
+  {
+    "session_id": "LEGIT_065",
+    "label": "legit",
+    "negative_type": "utility_bill",
+    "difficulty": "easy",
+    "city": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "chunks": [
+      "This is a reminder from your electricity provider's official service.",
+      "Your monthly bill is generated and due in ten days.",
+      "You can pay through the official app, website, or any authorised centre.",
+      "Ignore this message if you have already paid. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_041",
+    "label": "legit",
+    "negative_type": "credit_card",
+    "difficulty": "hard",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "Hi, this is Suresh from State Bank of India regarding your recent credit card application.",
+      "I just need to confirm your current mailing address for delivery of the card.",
+      "The card will arrive within 5 to 7 working days by registered post.",
+      "Is there anything else I can help you with today? Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_009",
+    "label": "legit",
+    "negative_type": "adv_fraud_alert",
+    "difficulty": "adversarial",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "Hello, this is Rajesh from HDFC Bank's fraud monitoring team.",
+      "We have blocked a suspicious transaction on your card as a precaution. Your money is safe.",
+      "We will not ask for your PIN, OTP, or any transfer. Please call the number printed on the back of your card to confirm the block.",
+      "You can also review the transaction in your official banking app. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_006",
+    "label": "legit",
+    "negative_type": "loan_emi",
+    "difficulty": "hard",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "Hello, this is Sunita from HDFC Bank loan servicing. This is a reminder that your EMI is due on the 5th.",
+      "You can pay through auto-debit, the mobile app, or at the branch.",
+      "If you have already paid, please ignore this message. There is no penalty yet.",
+      "Feel free to call our official helpline if you have questions. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_026",
+    "label": "legit",
+    "negative_type": "utility_bill",
+    "difficulty": "easy",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "This is a reminder from your electricity provider's official service.",
+      "Your monthly bill is generated and due in ten days.",
+      "You can pay through the official app, website, or any authorised centre.",
+      "Ignore this message if you have already paid. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_028",
+    "label": "legit",
+    "negative_type": "credit_card",
+    "difficulty": "hard",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "Hi, this is Shruti from Punjab National Bank regarding your recent credit card application.",
+      "I just need to confirm your current mailing address for delivery of the card.",
+      "The card will arrive within 5 to 7 working days by registered post.",
+      "Is there anything else I can help you with today? Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_017",
+    "label": "scam",
+    "scam_type": "sim_trai",
+    "difficulty": "positive",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "This call is from the Department of Telecommunications. Your mobile number is being used for illegal activities.",
+      "Your SIM card will be permanently blocked within two hours, and an FIR has been registered against you in Ahmedabad.",
+      "Do not cut this call. I am connecting you to officer Amit at the Cyber Crime Branch for a mandatory verification.",
+      "Your bank accounts are linked to a money laundering case. Keep this strictly confidential or you face immediate arrest.",
+      "For verification, transfer Rs 75,000 to the secure account we provide. This is refundable once your identity is cleared."
+    ]
+  },
+  {
+    "session_id": "SCAM_055",
+    "label": "scam",
+    "scam_type": "court_summons",
+    "difficulty": "positive",
+    "city": "Patna",
+    "latitude": 25.5941,
+    "longitude": 85.1376,
+    "chunks": [
+      "This is an automated call from the honourable court. A summons has been issued against you for a financial fraud case.",
+      "Press one to speak to the case officer. ... You are now connected to investigating officer Vikram.",
+      "An arrest warrant is active. If you disconnect, police will be sent to your address within the hour.",
+      "This matter is confidential and under digital surveillance. Stay on the line and do not alert anyone.",
+      "To convert the arrest warrant to bail, pay Rs 2,50,000 into the court's verification account now."
+    ]
+  },
+  {
+    "session_id": "SCAM_040",
+    "label": "scam",
+    "scam_type": "aadhaar_case",
+    "difficulty": "positive",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "Namaste, I am calling regarding your Aadhaar card which has been misused in a criminal case.",
+      "A parcel containing illegal SIM cards and fake documents was seized and your Aadhaar was used to book it.",
+      "This is a digital arrest. You are under investigation and cannot leave your house or end this call.",
+      "Senior officer Ravi is watching you on camera. Any attempt to inform others will be treated as obstruction.",
+      "To clear your name, move Rs 2,50,000 to the RBI-monitored account immediately. The money is safe and refundable."
+    ]
+  },
+  {
+    "session_id": "LEGIT_020",
+    "label": "legit",
+    "negative_type": "telecom_upgrade",
+    "difficulty": "medium",
+    "city": "Nagpur",
+    "latitude": 21.1458,
+    "longitude": 79.0882,
+    "chunks": [
+      "Hi, this is Karan from your mobile network's customer care.",
+      "You are eligible for an upgraded data plan at the same monthly price.",
+      "There is no obligation. You can accept the offer through the official app or by replying to our SMS.",
+      "Have a good day, and thank you for staying with us."
+    ]
+  },
+  {
+    "session_id": "SCAM_060",
+    "label": "scam",
+    "scam_type": "ed_laundering",
+    "difficulty": "positive",
+    "city": "Indore",
+    "latitude": 22.7196,
+    "longitude": 75.8577,
+    "chunks": [
+      "This is the Enforcement Directorate. Your PAN card has been linked to a large money laundering investigation.",
+      "A company under investigation has used your identity to open a bank account at ICICI Bank.",
+      "You have only 30 minutes to comply, or a non-bailable warrant will be issued and you will be taken into digital custody.",
+      "Officer Priya will remain on video call to monitor you. Do not contact your family or lawyer during this period.",
+      "Declare your total bank balance and transfer Rs 2,50,000 to this account for verification. It is fully refundable."
+    ]
+  },
+  {
+    "session_id": "SCAM_039",
+    "label": "scam",
+    "scam_type": "ed_laundering",
+    "difficulty": "positive",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "This is the Enforcement Directorate. Your PAN card has been linked to a large money laundering investigation.",
+      "A company under investigation has used your identity to open a bank account at Kotak Mahindra Bank.",
+      "You have only 30 minutes to comply, or a non-bailable warrant will be issued and you will be taken into digital custody.",
+      "Officer Neha will remain on video call to monitor you. Do not contact your family or lawyer during this period.",
+      "Declare your total bank balance and transfer Rs 75,000 to this account for verification. It is fully refundable."
+    ]
+  },
+  {
+    "session_id": "SCAM_036",
+    "label": "scam",
+    "scam_type": "parcel_customs",
+    "difficulty": "positive",
+    "city": "Mumbai",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "chunks": [
+      "Hello, I am calling from the Customs department. A parcel booked in your name has been intercepted at the airport.",
+      "On inspection it was found to contain 5 fake passports. This is a serious offence under the NDPS Act.",
+      "This is now a confidential investigation. Do not disconnect this call or discuss it with anyone, or you will be arrested immediately.",
+      "I am transferring your case to senior officer Sunita of the Narcotics Control Bureau. Please stay on video call for verification.",
+      "To prove your innocence and avoid arrest, transfer Rs 90,000 to this RBI verification account. It will be fully refunded after the enquiry."
+    ]
+  },
+  {
+    "session_id": "SCAM_021",
+    "label": "scam",
+    "scam_type": "bank_fraud",
+    "difficulty": "positive",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "Hello, I am officer Amit from the Cyber Crime Branch. Your ICICI Bank account is involved in a fraud complaint.",
+      "Several victims have named your account as the one that received stolen money.",
+      "This is now a police matter. Do not hang up or your assets will be frozen and you will be arrested today.",
+      "Stay on video call for interrogation. You are not permitted to speak to anyone else while this is ongoing.",
+      "To prove the funds are legitimate, transfer Rs 2,00,000 to our verification account for a 24-hour check."
+    ]
+  },
+  {
+    "session_id": "LEGIT_060",
+    "label": "legit",
+    "negative_type": "tax_refund",
+    "difficulty": "hard",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "This is an informational message from the Income Tax Department's official channel.",
+      "Your income tax refund for the assessment year has been processed.",
+      "The amount will be credited to your registered bank account automatically. No action is required from you.",
+      "For details, log in only to the official incometax.gov.in portal. We never ask for payment."
+    ]
+  },
+  {
+    "session_id": "LEGIT_003",
+    "label": "legit",
+    "negative_type": "police_callback",
+    "difficulty": "hard",
+    "city": "Kolkata",
+    "latitude": 22.5726,
+    "longitude": 88.3639,
+    "chunks": [
+      "Good afternoon, this is sub-inspector Manoj from Lucknow police station.",
+      "You filed a complaint about a lost mobile phone last week. I am calling with an update.",
+      "We have registered your report; please collect a copy of the FIR from the station when convenient.",
+      "If you have any questions you can visit us during working hours. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_007",
+    "label": "legit",
+    "negative_type": "telecom_upgrade",
+    "difficulty": "medium",
+    "city": "Chennai",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "chunks": [
+      "Hi, this is Sanjay from your mobile network's customer care.",
+      "You are eligible for an upgraded data plan at the same monthly price.",
+      "There is no obligation. You can accept the offer through the official app or by replying to our SMS.",
+      "Have a good day, and thank you for staying with us."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_007",
+    "label": "scam",
+    "scam_type": "adv_refund_reversal",
+    "difficulty": "adversarial",
+    "city": "Hyderabad",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "chunks": [
+      "Good day, this is Karan from payments support. An amount was mistakenly credited to your account.",
+      "We need your help to reverse it quietly before the audit team flags it against you.",
+      "Please stay on the line and keep this between us so it doesn't become a formal case.",
+      "Send Rs 90,000 back to the recovery account I give you and the matter is closed with no record.",
+      "If it is not returned in the next few minutes it will be treated as retained fraudulently."
+    ]
+  },
+  {
+    "session_id": "SCAM_061",
+    "label": "scam",
+    "scam_type": "aadhaar_case",
+    "difficulty": "positive",
+    "city": "Mumbai",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "chunks": [
+      "Namaste, I am calling regarding your Aadhaar card which has been misused in a criminal case.",
+      "A parcel containing 5 fake passports was seized and your Aadhaar was used to book it.",
+      "This is a digital arrest. You are under investigation and cannot leave your house or end this call.",
+      "Senior officer Suresh is watching you on camera. Any attempt to inform others will be treated as obstruction.",
+      "To clear your name, move Rs 3,80,000 to the RBI-monitored account immediately. The money is safe and refundable."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_011",
+    "label": "scam",
+    "scam_type": "adv_refund_reversal",
+    "difficulty": "adversarial",
+    "city": "Surat",
+    "latitude": 21.1702,
+    "longitude": 72.8311,
+    "chunks": [
+      "Good day, this is Deepa from payments support. An amount was mistakenly credited to your account.",
+      "We need your help to reverse it quietly before the audit team flags it against you.",
+      "Please stay on the line and keep this between us so it doesn't become a formal case.",
+      "Send Rs 1,20,000 back to the recovery account I give you and the matter is closed with no record.",
+      "If it is not returned in the next few minutes it will be treated as retained fraudulently."
+    ]
+  },
+  {
+    "session_id": "SCAM_020",
+    "label": "scam",
+    "scam_type": "court_summons",
+    "difficulty": "positive",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "chunks": [
+      "This is an automated call from the honourable court. A summons has been issued against you for a financial fraud case.",
+      "Press one to speak to the case officer. ... You are now connected to investigating officer Arun.",
+      "An arrest warrant is active. If you disconnect, police will be sent to your address within the hour.",
+      "This matter is confidential and under digital surveillance. Stay on the line and do not alert anyone.",
+      "To convert the arrest warrant to bail, pay Rs 2,50,000 into the court's verification account now."
+    ]
+  },
+  {
+    "session_id": "LEGIT_034",
+    "label": "legit",
+    "negative_type": "tax_refund",
+    "difficulty": "hard",
+    "city": "Indore",
+    "latitude": 22.7196,
+    "longitude": 75.8577,
+    "chunks": [
+      "This is an informational message from the Income Tax Department's official channel.",
+      "Your income tax refund for the assessment year has been processed.",
+      "The amount will be credited to your registered bank account automatically. No action is required from you.",
+      "For details, log in only to the official incometax.gov.in portal. We never ask for payment."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_022",
+    "label": "legit",
+    "negative_type": "adv_sim_kyc",
+    "difficulty": "adversarial",
+    "city": "Bhopal",
+    "latitude": 23.2599,
+    "longitude": 77.4126,
+    "chunks": [
+      "This is a service message from your mobile operator regarding SIM re-verification.",
+      "As per regulations, please complete your SIM KYC to avoid interruption of service.",
+      "You can do this free of charge at any authorised store with your ID. We will not ask for an OTP or payment on this call.",
+      "There is no immediate deactivation; you have several weeks. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_062",
+    "label": "scam",
+    "scam_type": "court_summons",
+    "difficulty": "positive",
+    "city": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "chunks": [
+      "This is an automated call from the honourable court. A summons has been issued against you for a financial fraud case.",
+      "Press one to speak to the case officer. ... You are now connected to investigating officer Pooja.",
+      "An arrest warrant is active. If you disconnect, police will be sent to your address within the hour.",
+      "This matter is confidential and under digital surveillance. Stay on the line and do not alert anyone.",
+      "To convert the arrest warrant to bail, pay Rs 5,00,000 into the court's verification account now."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_017",
+    "label": "legit",
+    "negative_type": "adv_fraud_alert",
+    "difficulty": "adversarial",
+    "city": "Ahmedabad",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "chunks": [
+      "Hello, this is Anjali from Punjab National Bank's fraud monitoring team.",
+      "We have blocked a suspicious transaction on your card as a precaution. Your money is safe.",
+      "We will not ask for your PIN, OTP, or any transfer. Please call the number printed on the back of your card to confirm the block.",
+      "You can also review the transaction in your official banking app. Thank you."
+    ]
+  },
+  {
+    "session_id": "LEGIT_046",
+    "label": "legit",
+    "negative_type": "telecom_upgrade",
+    "difficulty": "medium",
+    "city": "Jaipur",
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "chunks": [
+      "Hi, this is Priya from your mobile network's customer care.",
+      "You are eligible for an upgraded data plan at the same monthly price.",
+      "There is no obligation. You can accept the offer through the official app or by replying to our SMS.",
+      "Have a good day, and thank you for staying with us."
+    ]
+  },
+  {
+    "session_id": "LEGIT_055",
+    "label": "legit",
+    "negative_type": "police_callback",
+    "difficulty": "hard",
+    "city": "Bengaluru",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "chunks": [
+      "Good afternoon, this is sub-inspector Arun from Surat police station.",
+      "You filed a complaint about a lost mobile phone last week. I am calling with an update.",
+      "We have registered your report; please collect a copy of the FIR from the station when convenient.",
+      "If you have any questions you can visit us during working hours. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_008",
+    "label": "scam",
+    "scam_type": "adv_kyc_expiry",
+    "difficulty": "adversarial",
+    "city": "Delhi",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "chunks": [
+      "Hello, this is Shruti from the compliance unit. Your verification has lapsed and your account is now restricted.",
+      "I can help you restore it right now, but you will need to follow my steps exactly and stay on the call.",
+      "Kindly do not visit the branch for this, it will only delay things and complicate your file.",
+      "A small clearance fee of Rs 50,000 is required to reactivate, which is adjusted back into your account.",
+      "Please transfer it to the reactivation account I am sharing so we can lift the restriction today."
+    ]
+  },
+  {
+    "session_id": "LEGIT_ADV_020",
+    "label": "legit",
+    "negative_type": "adv_tax_demand",
+    "difficulty": "adversarial",
+    "city": "Patna",
+    "latitude": 25.5941,
+    "longitude": 85.1376,
+    "chunks": [
+      "This is an informational call from the Income Tax Department's official helpline.",
+      "Our records show a pending tax demand on your account for the last assessment year.",
+      "Please log in to the official incometax.gov.in portal to review and pay it. We never collect payment over the phone.",
+      "If you have already responded, kindly ignore this message. Thank you."
+    ]
+  },
+  {
+    "session_id": "SCAM_ADV_001",
+    "label": "scam",
+    "scam_type": "adv_slowburn",
+    "difficulty": "adversarial",
+    "city": "Pune",
+    "latitude": 18.5204,
+    "longitude": 73.8567,
+    "chunks": [
+      "Hi, am I speaking with the account holder? This is Priya from the central verification cell, nothing to worry about.",
+      "We are just reviewing an issue connected to your identity documents. It should be quick if you cooperate.",
+      "I would request you keep this conversation private for now, and stay on the line so I can guide you.",
+      "There is a small refundable cooperation amount of Rs 5,00,000 needed to close the review from your side.",
+      "Once you send it to the account I share, everything will be cleared and returned to you shortly."
+    ]
+  }
+]

@@ -2,6 +2,21 @@ from qdrant_client.models import PointStruct
 
 
 def load_and_index(client, collection_name, embed_fn, patterns):
+    """
+    Embed and upsert the scam patterns.
+
+    Skips the work if the collection already holds them. Upserting is
+    idempotent (fixed point IDs), so re-running was harmless but re-encoded
+    every pattern on each startup -- the old Chroma indexer had this same
+    guard and it was lost in the Qdrant migration.
+    """
+    try:
+        existing = client.count(collection_name=collection_name).count
+        if existing >= len(patterns):
+            return
+    except Exception:
+        # A missing/unreadable collection just means we should index it.
+        pass
 
     points = []
 

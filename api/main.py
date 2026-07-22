@@ -1,25 +1,15 @@
-from fastapi import Request
-from fastapi.responses import Response
+"""
+DEPRECATED -- duplicate of twilo/dummy_call.py.
 
+This file and twilo/dummy_call.py defined the same POST /twilio/voice route
+with near-identical bodies, and both used `@app.post(...)` without defining or
+importing `app` (NameError on import). Registering both would also collide on
+the same path.
 
-@app.post("/twilio/voice")
-async def twilio_voice(request: Request):
-
-    form = await request.form()
-
-    print("Incoming Call")
-    print(dict(form))
-
-    xml = """
-<Response>
-    <Say voice="alice">
-        Hello.
-        You are connected to the Digital Arrest Scam Detection System.
-    </Say>
-</Response>
+The canonical version now lives in twilo/dummy_call.py as an APIRouter.
+Kept here as a redirect rather than deleted, since it is not my file to
+remove -- @kalyan021004, safe to delete this whole `api/` directory once you
+confirm nothing else imports it.
 """
 
-    return Response(
-        content=xml,
-        media_type="application/xml"
-    )
+from twilo.dummy_call import router  # noqa: F401

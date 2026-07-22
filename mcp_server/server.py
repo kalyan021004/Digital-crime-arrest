@@ -26,12 +26,12 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 from mcp.server.fastmcp import FastMCP
-from rag.knowledge_base import ScamPatternKB
+from rag.knowledge_base import get_kb
 from agents.graph import process_call_session
 from agents.nodes import SUSPICIOUS_KEYWORDS, RAG_MATCH_THRESHOLD
 
 mcp = FastMCP("digital-arrest-shield")
-_kb = ScamPatternKB()
+_kb = get_kb()
 
 
 @mcp.tool()

@@ -32,7 +32,12 @@ def _install_stubs():
         def retrieve(self, query, top_k=2):
             return []
 
+    _stub_instance = _StubKB()
+
     kb_mod.ScamPatternKB = _StubKB
+    # nodes.py calls get_kb() rather than constructing a KB directly, so the
+    # stub module has to expose it too.
+    kb_mod.get_kb = lambda: _stub_instance
     sys.modules["rag.knowledge_base"] = kb_mod
 
     mongo_mod = types.ModuleType("db.mongo")

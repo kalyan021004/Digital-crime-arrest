@@ -16,6 +16,9 @@ wheels/
 # committing them produces unmergeable conflicts on every pull.
 chroma_db/
 
+# Embedded Qdrant store — rebuilt from data/scam_patterns.json on first run.
+qdrant_data/
+
 # OS noise
 .DS_Store
 Thumbs.db

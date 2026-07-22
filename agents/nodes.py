@@ -18,12 +18,21 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from localization.alerts import generate_localized_alert
-from rag.knowledge_base import ScamPatternKB
+from rag.knowledge_base import get_kb
 from agents.state import ScamDetectionState
+from agents.soft_signals import detect as detect_soft_coercion
 from db.mongo import incident_collection
 
-# Shared KB instance (loaded once, reused across all node calls)
-_kb = ScamPatternKB()
+# Shared KB instance (built once per process, reused everywhere -- see
+# rag/knowledge_base.get_kb for why this must not be a fresh ScamPatternKB()).
+_kb = get_kb()
+
+# Ablation toggle for the soft-coercion detector, so the before/after in the
+# evaluation doc is reproducible:
+#     python evaluate.py                      # detector ON  (default)
+#     DAS_SOFT_SIGNALS=0 python evaluate.py   # detector OFF (the "before")
+# On Windows PowerShell:  $env:DAS_SOFT_SIGNALS=0 ; python evaluate.py
+SOFT_SIGNALS_ENABLED = os.getenv("DAS_SOFT_SIGNALS", "1") != "0"
 
 # Cheap keyword signals used for the first-pass filter (Node 1).
 # In production you'd replace/augment this with a small trained classifier.
@@ -106,6 +115,20 @@ def compound_risk_correlator(state: ScamDetectionState) -> dict:
     if state.get("matched_patterns"):
         rag_confidence = max(m["score"] for m in state["matched_patterns"])
         base = max(base, rag_confidence)
+
+    # Soft-coercion structural signal. Catches euphemistic scams that avoid the
+    # obvious keywords ("arrest", "CBI") and thus produce no keyword score and
+    # no RAG match, but still exhibit the diagnostic structure: isolation
+    # pressure co-occurring with a directed transfer of money. See
+    # agents/soft_signals.py. Only fires when BOTH elements are present (with a
+    # negation guard), so reassuring legit calls ("we will never ask you to
+    # transfer") do not trigger it.
+    soft = detect_soft_coercion(state.get("transcript_chunks", []))
+    if SOFT_SIGNALS_ENABLED and soft["soft_scam"]:
+        seen.update(soft["categories"])
+        # Enough that, combined with the >=2 categories it adds (compound_bonus
+        # >= 0.15), the session crosses the 0.75 alert threshold: 0.62 + 0.15.
+        base = max(base, 0.62)
 
     # Compound bonus: co-occurrence of DISTINCT risk categories across the
     # session is the diagnostic signal. This is a property of the session as a

@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 from fastapi.middleware.cors import CORSMiddleware
 
-from rag.knowledge_base import ScamPatternKB
+from rag.knowledge_base import get_kb
 from agents.graph import process_call_session
 from agents.nodes import SUSPICIOUS_KEYWORDS, RAG_MATCH_THRESHOLD
 from localization.alerts import (
@@ -38,7 +38,7 @@ app.add_middleware(
 
 from db.mongo import incident_collection  # noqa: E402
 
-_kb = ScamPatternKB()
+_kb = get_kb()
 _fraud_graph = FraudNetworkGraph()
 _geo = GeoCrimeIntelligence()
 

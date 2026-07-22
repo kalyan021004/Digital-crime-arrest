@@ -41,7 +41,10 @@ class ScamDetectionState(TypedDict, total=False):
     # e.g. {"authority_impersonation", "isolation_and_threat", "financial_pressure"}
     risk_categories_seen: List[str]
 
-    # Running, cumulative confidence that this session is a scam (0.0-1.0)
+    # Running, cumulative confidence that this session is a scam (0.0-1.0).
+    # Fed by three signals: the keyword filter (node 1), RAG pattern match
+    # (node 2), and the soft-coercion structural detector (agents/soft_signals),
+    # combined with a compound bonus for co-occurring risk categories (node 3).
     suspicion_score: float
 
     # Final decision made by the graph: "monitor" | "warn" | "alert"
