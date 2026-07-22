@@ -491,18 +491,26 @@ const API_BASE = "http://localhost:8000";
 document.getElementById("api-base-label").textContent = API_BASE;
 
 // ---------- Sample call transcripts for the simulator ----------
+// Scam call: opens like a routine verification call, then escalates through
+// authority impersonation -> isolation/threat -> financial pressure. The
+// suspicion score should climb across the chunks rather than max out at once.
 const SCAM_CALL = [
-  "Hello, I am calling from Mumbai Customs office. A parcel under your name containing illegal substances has been intercepted.",
-  "This is a confidential matter. Do not disconnect the call or inform anyone, or you will be arrested immediately.",
-  "I am connecting you to a senior CBI officer for further investigation. Please stay on video.",
-  "To prove your innocence, you need to transfer Rs 50,000 to this RBI verification account for 24 hours, it will be refunded.",
+  "Hello, good afternoon. Sorry to call you unexpectedly — do you have a few minutes to talk?",
+  "Thank you. There's a matter I need to go over with you, so please bear with me for a moment.",
+  "A courier parcel registered in your name has been held back for a documentation check.",
+  "On inspection it was found to contain illegal items. I am transferring you to a senior CBI officer now — this is a confidential investigation, do not disconnect or inform anyone.",
+  "A non-bailable warrant has been prepared in your name. You must cooperate immediately to avoid arrest.",
+  "Transfer Rs 50,000 to this RBI verification account. It is fully refundable within 24 hours once your name is cleared.",
 ];
 
+// Legit call: a genuine bank fraud alert. Deliberately loaded with scam-adjacent
+// words ("fraud", "suspicious", "transfer") to show the system keys on coercion
+// STRUCTURE, not fear-words. It must stay cleared.
 const LEGIT_CALL = [
-  "Hi, this is Priya calling from HDFC Bank customer service regarding your recent credit card application.",
-  "I wanted to confirm your current address for the card delivery.",
-  "Your card should arrive within 5-7 business days. Is there anything else I can help you with?",
-  "Thank you for banking with us, have a great day.",
+  "Hello, this is Rahul from your bank's fraud monitoring team, calling about a recent transaction on your card.",
+  "We have temporarily blocked a suspicious payment as a precaution. Your money is safe.",
+  "We will never ask for your PIN, OTP, or any transfer. Please call the number printed on the back of your card to confirm.",
+  "You can also review the transaction in your official banking app. Thank you.",
 ];
 
 // ---------- Clock ----------
@@ -611,6 +619,8 @@ async function runCall(chunks) {
 
   resetSim();
   document.getElementById("ticker").innerHTML = "";
+  // Hold on a clean 0% baseline for a beat so the climb is visible on screen.
+  await new Promise(r => setTimeout(r, 800));
 
   const sessionId = "SIM_" + Date.now();
   const lang = document.getElementById("lang-select").value;
@@ -644,7 +654,7 @@ async function runCall(chunks) {
     updateCategories(data.risk_categories_seen);
     if (data.decision === "alert") showAlert(data.alert_message);
 
-    await new Promise(r => setTimeout(r, 900));
+    await new Promise(r => setTimeout(r, 2200));
   }
 
   document.getElementById("run-scam").disabled = false;

@@ -22,3 +22,15 @@ qdrant_data/
 # OS noise
 .DS_Store
 Thumbs.db
+
+# QA / render artifacts (not deliverables)
+docs/_vf/
+docs/_vf2/
+docs/_preview_*.png
+docs/_v2title.jpg
+docs/dslide-*.jpg
+docs/slide-*.jpg
+
+# Intermediate deck versions and PowerPoint lock/temp files
+docs/Digital_Arrest_Scam_Shield_Deck_v2.pptx
+~$*.pptx
