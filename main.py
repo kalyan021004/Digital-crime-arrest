@@ -30,7 +30,13 @@ def run_demo():
 
     for call in calls:
         print(f"\n--- Session {call['session_id']} (true label: {call['label']}) ---")
-        final_state = process_call_session(call["session_id"], call["chunks"])
+        final_state = process_call_session(
+            session_id=call["session_id"],
+            chunks=call["chunks"],
+            city=call.get("city"),
+            latitude=call.get("latitude"),
+            longitude=call.get("longitude"),
+        )
 
         predicted_scam = final_state["decision"] in ("warn", "alert")
         actual_scam = call["label"] == "scam"

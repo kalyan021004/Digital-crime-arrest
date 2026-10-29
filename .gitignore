@@ -10,3 +10,27 @@ wheels/
 .venv
 .env
 
+# Chroma vector store — a LOCAL BUILD ARTIFACT, not source.
+# It is regenerated from data/scam_patterns.json by rag/indexer.py on first run.
+# These are binary files that change every time anyone runs the pipeline, so
+# committing them produces unmergeable conflicts on every pull.
+chroma_db/
+
+# Embedded Qdrant store — rebuilt from data/scam_patterns.json on first run.
+qdrant_data/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# QA / render artifacts (not deliverables)
+docs/_vf/
+docs/_vf2/
+docs/_preview_*.png
+docs/_v2title.jpg
+docs/dslide-*.jpg
+docs/slide-*.jpg
+
+# Intermediate deck versions and PowerPoint lock/temp files
+docs/Digital_Arrest_Scam_Shield_Deck_v2.pptx
+~$*.pptx

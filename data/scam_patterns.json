@@ -87,5 +87,137 @@
       "how much money do you have in fixed deposits",
       "we need to verify all your account details to clear your name"
     ]
+  },
+  {
+    "id": "SP009",
+    "category": "authority_impersonation",
+    "pattern_name": "TRAI/DoT SIM Misuse",
+    "text": "Caller claims to be from TRAI or the Department of Telecommunications, saying the victim's mobile number or SIM is linked to illegal activity, harassment complaints, or money laundering, and will be disconnected unless the victim cooperates. Common opener that hands off to a fake police officer.",
+    "example_phrases": [
+      "your mobile number is being used for illegal activities and will be blocked",
+      "this is the Department of Telecommunications, your SIM will be deactivated in two hours",
+      "a complaint has been registered against your number for sending obscene messages"
+    ]
+  },
+  {
+    "id": "SP010",
+    "category": "authority_impersonation",
+    "pattern_name": "Money Mule Account Accusation",
+    "text": "Caller impersonating cyber police tells the victim that their bank account has been identified as receiving proceeds of crime, that multiple victims have named them, and that the account will be frozen unless they prove the funds are clean.",
+    "example_phrases": [
+      "your bank account is involved in a fraud complaint filed by multiple victims",
+      "your account received money stolen from a cyber crime victim",
+      "several people have named your account as the one that received the stolen funds"
+    ]
+  },
+  {
+    "id": "SP011",
+    "category": "authority_impersonation",
+    "pattern_name": "Aadhaar Misuse Accusation",
+    "text": "Caller claims the victim's Aadhaar number has been used to open fraudulent accounts, book parcels of contraband, or register criminal SIMs, establishing false personal culpability to justify the investigation.",
+    "example_phrases": [
+      "your Aadhaar card has been misused in a criminal case",
+      "an account opened with your Aadhaar is under money laundering investigation",
+      "your Aadhaar was used to book a parcel containing illegal items"
+    ]
+  },
+  {
+    "id": "SP012",
+    "category": "authority_impersonation",
+    "pattern_name": "Court Summons / Arrest Warrant Robocall",
+    "text": "Automated or live call claiming a court has issued a summons or arrest warrant against the victim for a financial or criminal case, instructing them to press a key or stay on the line to speak to a case officer.",
+    "example_phrases": [
+      "a summons has been issued against you, press one to speak to the case officer",
+      "an arrest warrant is active in your name for a financial fraud case",
+      "the honourable court has issued a non-bailable warrant against you"
+    ]
+  },
+  {
+    "id": "SP013",
+    "category": "isolation_and_threat",
+    "pattern_name": "House Confinement Instruction",
+    "text": "Victim is instructed that they are under 'digital arrest' and must remain physically inside a room, on camera, and may not leave, sleep, or attend to others until the fake investigation concludes -- sometimes lasting days.",
+    "example_phrases": [
+      "you are under digital arrest and cannot leave your house",
+      "stay in front of the camera, you are not allowed to move until we finish",
+      "you cannot go to sleep until the interrogation is complete"
+    ]
+  },
+  {
+    "id": "SP014",
+    "category": "isolation_and_threat",
+    "pattern_name": "No-Family-No-Lawyer Order",
+    "text": "Victim is explicitly forbidden from contacting family members, colleagues, or a lawyer during the call, and told that doing so is obstruction of justice or will worsen their charges. Isolates the victim from anyone who might recognise the scam.",
+    "example_phrases": [
+      "do not contact your family or lawyer during this investigation",
+      "informing anyone will be treated as obstruction of justice",
+      "keep this strictly confidential or your charges will become non-bailable"
+    ]
+  },
+  {
+    "id": "SP015",
+    "category": "financial_pressure",
+    "pattern_name": "Refundable Security Deposit",
+    "text": "Money demanded is framed as a temporary, fully refundable security deposit or good-faith amount that will be returned after verification, lowering the victim's resistance to transferring large sums.",
+    "example_phrases": [
+      "deposit this amount as a refundable security, it will be returned after verification",
+      "this is a good faith amount, you will get it back once cleared",
+      "the money is completely safe and refundable within 24 hours"
+    ]
+  },
+  {
+    "id": "SP016",
+    "category": "financial_pressure",
+    "pattern_name": "RBI/Government Account Transfer",
+    "text": "Victim is told to move funds to an account described as belonging to the RBI, a government treasury, or a court, lending false institutional legitimacy to what is actually a mule account controlled by the scammers.",
+    "example_phrases": [
+      "transfer the money to this RBI monitored account for verification",
+      "move your funds to the government treasury account we provide",
+      "the court's verification account will hold your money safely"
+    ]
+  },
+  {
+    "id": "SP017",
+    "category": "financial_pressure",
+    "pattern_name": "Move Funds For Safety",
+    "text": "Scammer claims the victim's own accounts are compromised or about to be frozen, and that the only way to protect their savings is to move everything to a 'safe' account they control.",
+    "example_phrases": [
+      "your accounts are compromised, move your money to a safe account immediately",
+      "to protect your savings from being frozen, transfer everything now",
+      "your bank has been hacked, we will keep your money safe during the investigation"
+    ]
+  },
+  {
+    "id": "SP018",
+    "category": "authority_impersonation",
+    "pattern_name": "Narcotics/NDPS Framing",
+    "text": "Caller invokes the Narcotics Control Bureau or NDPS Act, claiming the victim is implicated in a drug trafficking case, to raise the perceived severity and fear of a long non-bailable sentence.",
+    "example_phrases": [
+      "this is a serious offence under the NDPS Act",
+      "the Narcotics Control Bureau has opened a case against you",
+      "the parcel contained narcotic substances linked to your identity"
+    ]
+  },
+  {
+    "id": "SP019",
+    "category": "technical_signal",
+    "pattern_name": "Forced Video Call / Skype Interrogation",
+    "text": "Victim is pushed onto a video call (often Skype or WhatsApp) with a person in a police-style uniform and fake station backdrop, to simulate a real interrogation. Legitimate Indian agencies do not interrogate citizens over video call.",
+    "example_phrases": [
+      "join this Skype call for the official interrogation",
+      "stay on video call so the officer can monitor you",
+      "keep your camera on for the duration of the digital arrest"
+    ]
+  },
+  {
+    "id": "SP020",
+    "category": "isolation_and_threat",
+    "pattern_name": "Continuous Surveillance Claim",
+    "text": "Scammer claims the victim is being continuously watched or recorded and that their location, devices, or accounts are under live monitoring, deterring them from seeking help or hanging up.",
+    "example_phrases": [
+      "you are under surveillance, we can see everything you do",
+      "our officer is monitoring you on camera at all times",
+      "any attempt to alert others will be recorded as evidence against you"
+    ]
   }
 ]

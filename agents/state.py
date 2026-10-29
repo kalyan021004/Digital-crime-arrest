@@ -26,14 +26,25 @@ class ScamDetectionState(TypedDict, total=False):
     # Output of Node 1 (suspicion filter): quick heuristic score 0.0-1.0
     keyword_suspicion_score: float
 
-    # Output of Node 2 (RAG retrieval): matched known scam patterns
+    # Output of Node 2 (RAG retrieval): matched known scam patterns.
+    # NOTE: this holds only the CURRENT chunk's matches -- it is overwritten on
+    # every pass through the graph. Anything that needs session-wide evidence
+    # must read matched_pattern_evidence below.
     matched_patterns: List[Dict[str, Any]]
+
+    # Session-wide accumulated evidence, appended by Node 3. Each entry records
+    # the pattern that matched, which chunk triggered it, and the match score,
+    # so an incident report can show its full provenance.
+    matched_pattern_evidence: List[Dict[str, Any]]
 
     # Output of Node 3 (compound risk correlation): categories of risk seen so far
     # e.g. {"authority_impersonation", "isolation_and_threat", "financial_pressure"}
     risk_categories_seen: List[str]
 
-    # Running, cumulative confidence that this session is a scam (0.0-1.0)
+    # Running, cumulative confidence that this session is a scam (0.0-1.0).
+    # Fed by three signals: the keyword filter (node 1), RAG pattern match
+    # (node 2), and the soft-coercion structural detector (agents/soft_signals),
+    # combined with a compound bonus for co-occurring risk categories (node 3).
     suspicion_score: float
 
     # Final decision made by the graph: "monitor" | "warn" | "alert"
